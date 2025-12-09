@@ -50,6 +50,41 @@ nav{display:none}
 .container{padding:18px}
 }
 </style>
+<style>
+/* Nagoya University-inspired green color */
+:root {
+--nu-green: #00693e;
+--nu-light-green: #2fa674;
+}
+
+
+/* Animated gradient background */
+body {
+background: linear-gradient(120deg, var(--nu-green), var(--nu-light-green));
+background-size: 200% 200%;
+animation: gradientShift 8s ease infinite;
+}
+
+
+@keyframes gradientShift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+
+/* Animated heading */
+h1 {
+color: white;
+animation: fadeIn 3s ease forwards;
+opacity: 0;
+}
+
+
+@keyframes fadeIn {
+to { opacity: 1; }
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -63,47 +98,4 @@ nav{display:none}
 </div>
 <nav>
 <a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-
-<section class="hero">
-<div>
-<div class="card">
-<h1>Beautiful, responsive website — built with plain HTML & CSS</h1>
-<p class="lead">This single-page template is a lightweight starting point for a portfolio, small business, or landing page. No build step required — just edit and deploy.</p>
-<a class="cta" href="#contact">Get in touch</a>
-
-
-<div class="features">
-<div class="feature"><div class="icon">★</div><div><strong>Fast & lightweight</strong><div style="color:var(--muted);font-size:14px">Minimal CSS and no frameworks</div></div></div>
-<div class="feature"><div class="icon">⚙</div><div><strong>Responsive</strong><div style="color:var(--muted);font-size:14px">Looks good on phones and desktops</div></div></div>
-<div class="feature"><div class="icon">🔒</div><div><strong>Privacy-friendly</strong><div style="color:var(--muted);font-size:14px">No trackers, only client-side code</div></div></div>
-</div>
-</div>
-</div>
-
-
-<aside>
-<div class="card">
-<h3 style="margin-top:0">Quick info</h3>
-<p style="color:var(--muted);margin-top:6px">Use this area for a short bio, highlights, or a photo. Swap content easily and change colors in the CSS variables at the top.</p>
-<ul style="color:var(--muted);margin-top:12px;padding-left:18px">
-<li>HTML5 semantic layout</li>
-<li>Accessible form controls</li>
-<li>Easy to customize</li>
-</ul>
-</div>
-</aside>
-</section>
-
-
-<section id="about" class="card" style="margin-top:24px">
-<h2>About</h2>
-<p style="color:var(--muted)">This template is intended to be copied and modified. Replace text, add images, or connect the contact form to a backend/mail service. Keep styles in the &lt;head&gt; for a single-file distribution or move them to a separate CSS file if you prefer.</p>
-</section>
-
-
-<section id="services" style="margin-top:32px">
+</html>
