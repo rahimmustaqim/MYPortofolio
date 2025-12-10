@@ -1,15 +1,94 @@
 <!doctype html>
-<div class="logo">My Portofolio</div>
-<div>
-<div style="font-weight:800">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
-<div style="font-size:12px;color:var(--muted);margin-top:4px">Water Resource and Coastal Engineering</div>
-</div>
-</div>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+
+    <!-- NAGOYA UNIVERSITY GREEN THEME -->
+    <style>
+        :root {
+            --accent: #007A33;        /* Nagoya University Green */
+            --accent-dark: #005A26;   /* Darker shade */
+            --muted: #6b8f7a;         /* Soft greenish-gray */
+            --background: #f4f7f5;    /* Light background */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+        }
+
+        header {
+            background-color: var(--accent);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 16px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #c8ffd8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #007A33, #005A26);
+            color: white;
+            padding: 40px;
+        }
+
+        .cta {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .cta:hover {
+            background-color: var(--accent-dark);
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 16px;
+            border: 1px solid #cfe7d6;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo" style="font-size:20px;font-weight:700;">My Portfolio</div>
+
+    <div>
+        <div style="font-weight:800">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">
+            Water Resource and Coastal Engineering
+        </div>
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 
@@ -163,6 +242,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
 
