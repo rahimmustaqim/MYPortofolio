@@ -70,7 +70,8 @@
     }
 
     .card {
-        background: white;
+        background: rgba(255, 255, 255, 0.92);
+backdrop-filter: blur(2px);
         padding: 28px;
         border-radius: 14px;
         border: 1px solid #dbe7df;
@@ -191,7 +192,7 @@ resize();
 // flow field parameters
 const particles = [];
 const NUM = 900;
-const SPEED = 0.35;
+const SPEED = 0.6;
 const SCALE = 0.002;
 
 for (let i = 0; i < NUM; i++) {
@@ -214,10 +215,10 @@ function flow(x, y) {
 }
 
 function animate() {
-    ctx.fillStyle = "rgba(243, 246, 244, 0.08)";
+    ctx.fillStyle = "rgba(243, 246, 244, 0.03)";
     ctx.fillRect(0, 0, w, h);
 
-    ctx.strokeStyle = "rgba(0, 102, 51, 0.35)";
+    ctx.strokeStyle = "rgba(0, 102, 51, 0.55)";
     ctx.lineWidth = 0.6;
 
     for (let p of particles) {
@@ -490,6 +491,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
