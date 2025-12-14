@@ -177,7 +177,7 @@ backdrop-filter: blur(2px);
 
 <body>
 <canvas id="cfd-bg"></canvas>
-    <script>
+   <script>
 const canvas = document.getElementById("cfd-bg");
 const ctx = canvas.getContext("2d");
 
@@ -189,95 +189,72 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
-/* =====================
-   TERRAIN (DEM STYLE)
-===================== */
-function terrain(x, y) {
-    return (
-        Math.sin(x * 0.001) * 0.5 +
-        Math.cos(y * 0.0012) * 0.5 +
-        Math.sin((x + y) * 0.0007)
-    );
-}
-
+/* =========================
+   STATIC TERRAIN (DRAW ONCE)
+========================= */
 function drawTerrain() {
-    const img = ctx.createImageData(w, h);
-    for (let y = 0; y < h; y += 2) {
-        for (let x = 0; x < w; x += 2) {
-            const e = terrain(x, y);
-            const v = Math.floor(220 - e * 25);
-            const i = (y * w + x) * 4;
-            img.data[i] = v;
-            img.data[i + 1] = v + 8;
-            img.data[i + 2] = v;
-            img.data[i + 3] = 255;
+    ctx.fillStyle = "#eef3ef";
+    ctx.fillRect(0, 0, w, h);
+
+    for (let y = 0; y < h; y += 40) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        for (let x = 0; x < w; x += 40) {
+            const z = Math.sin(x * 0.002) * 20 + Math.cos(y * 0.002) * 20;
+            ctx.lineTo(x, y + z);
         }
+        ctx.strokeStyle = "rgba(180,200,185,0.6)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
     }
-    ctx.putImageData(img, 0, 0);
 }
 
-/* =====================
+drawTerrain();
+
+/* =========================
    RIVER CENTERLINE
-===================== */
-function riverCenter(y) {
+========================= */
+function riverX(y) {
     return w * 0.45 + Math.sin(y * 0.002) * 120;
 }
 
-/* =====================
-   FLOW FIELD
-===================== */
-function flow(x, y) {
-    const cx = riverCenter(y);
-    const dist = Math.abs(x - cx);
-
-    const estuary = y / h;
-    const width = 40 + estuary * 140;
-
-    if (dist < width) {
-        return {
-            x: (x - cx) * 0.01,
-            y: 1.2 - estuary * 0.6
-        };
-    }
-
-    return { x: 0, y: 0 };
-}
-
-/* =====================
-   PARTICLES (FLOW)
-===================== */
+/* =========================
+   FLOW PARTICLES
+========================= */
 const particles = [];
-for (let i = 0; i < 700; i++) {
+for (let i = 0; i < 600; i++) {
+    const y = Math.random() * h;
     particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h
+        x: riverX(y) + (Math.random() - 0.5) * 60,
+        y: y
     });
 }
 
 function animate() {
-    drawTerrain();
-
-    ctx.fillStyle = "rgba(243,246,244,0.15)";
+    // fade previous flow only
+    ctx.fillStyle = "rgba(238,243,239,0.05)";
     ctx.fillRect(0, 0, w, h);
 
-    ctx.strokeStyle = "rgba(0,102,51,0.55)";
+    ctx.strokeStyle = "rgba(0,102,51,0.6)";
     ctx.lineWidth = 0.7;
 
     for (let p of particles) {
-        const f = flow(p.x, p.y);
+        const estuary = p.y / h;
+        const speed = 0.6 - estuary * 0.3;
+        const cx = riverX(p.y);
 
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
 
-        p.x += f.x;
-        p.y += f.y;
+        p.x += (cx - p.x) * 0.02;
+        p.y += speed;
 
         ctx.lineTo(p.x, p.y);
         ctx.stroke();
 
-        if (p.y > h || p.x < 0 || p.x > w) {
-            p.y = Math.random() * 50;
-            p.x = riverCenter(p.y) + (Math.random() - 0.5) * 80;
+        if (p.y > h) {
+            p.y = 0;
+            p.x = riverX(p.y) + (Math.random() - 0.5) * 60;
         }
     }
 
@@ -533,6 +510,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
