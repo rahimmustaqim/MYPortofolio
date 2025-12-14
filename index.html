@@ -23,31 +23,35 @@ body {
 }
 }
 
-/* ===== Centered Professional Header with Profile Image ===== */
+/* ===== Centered Full-Page Header with Square Profile Image ===== */
 .main-header {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    padding: 40px 24px;
+    padding: 60px 24px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-}
-
-.header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    /* NEW */
+    text-align: center;          /* center all content */
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 28px;
+    align-items: center;
+    flex-direction: column;      /* stack vertically */
 }
 
-/* Profile photo */
+/* Inner container */
+.header-inner {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;      /* stack vertically */
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile photo (square) */
 .profile-img {
-    width: 110px;
-    height: 110px;
+    width: 140px;
+    height: 140px;               /* square */
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.85);
+    border-radius: 12px;         /* slightly rounded corners */
+    border: 4px solid rgba(255,255,255,0.85);
     background: white;
 }
 
@@ -58,41 +62,44 @@ body {
 
 /* Title */
 .site-title {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #111827;
+    color: #ffffff;              /* white over green gradient */
 }
 
 /* Name */
 .author-name {
-    margin-top: 10px;
-    font-size: 21px;
+    margin-top: 8px;
+    font-size: 20px;
     font-weight: 700;
-    color: #1f2937;
+    color: #f0f0f0;
 }
 
 /* Field */
 .author-field {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #374151;
-    letter-spacing: 0.6px;
+    margin-top: 4px;
+    font-size: 16px;
+    color: #d9e6d6;
+    letter-spacing: 0.5px;
 }
 
 /* Navigation */
 .main-nav {
-    margin-top: 14px;
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .main-nav a {
-    margin: 0 16px;
     font-size: 15px;
     font-weight: 600;
-    color: #111827;
+    color: #ffffff;
     text-decoration: none;
     position: relative;
-    padding-bottom: 6px;
+    padding-bottom: 4px;
 }
 
 /* Hover underline */
@@ -109,13 +116,6 @@ body {
 
 .main-nav a:hover::after {
     width: 100%;
-}
-
-/* Mobile responsive */
-@media (max-width: 700px) {
-    .header-inner {
-        flex-direction: column;
-    }
 }
 
     /* ===== Layout container ===== */
@@ -299,21 +299,14 @@ nav a:hover::after {
 
 <header class="main-header">
     <div class="header-inner">
-
-        <!-- LEFT: PROFILE PHOTO -->
+        <!-- Profile Photo -->
         <img src="rahim.jpg.jpeg" alt="Rahim Mustaqim" class="profile-img">
 
-        <!-- RIGHT: TEXT CONTENT -->
+        <!-- Text Content -->
         <div class="header-text">
             <div class="site-title">PORTOFOLIO</div>
-
-            <div class="author-name">
-                Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.
-            </div>
-
-            <div class="author-field">
-                Water Resource and Coastal Engineering
-            </div>
+            <div class="author-name">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
+            <div class="author-field">Water Resource and Coastal Engineering</div>
 
             <nav class="main-nav">
                 <a href="#about">About</a>
@@ -321,7 +314,6 @@ nav a:hover::after {
                 <a href="#contact">Contact</a>
             </nav>
         </div>
-
     </div>
 </header>
 
@@ -555,6 +547,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
