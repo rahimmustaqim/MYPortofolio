@@ -1,62 +1,34 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>PORTOFOLIO</title>
+<meta charset="UTF-8">
+<title>PORTOFOLIO</title>
 
-    <!-- NAGOYA UNIVERSITY GREEN THEME -->
-   <style>
-    :root {
-        /* Nagoya University Academic Green */
-        --accent: #006633;
-        --accent-dark: #004d26;
-        --muted: #5f7f6b;
-        --background: #f3f6f4;
-    }
+<style>
+:root {
+    --accent: #006633;
+    --accent-dark: #004d26;
+    --muted: #5f7f6b;
+}
 
-  body {
+/* ================= DEM TERRAIN BACKGROUND ================= */
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #1f2937;
     line-height: 1.6;
 
-    /* DEM-style terrain background */
     background:
         /* Rivers (top) */
-        radial-gradient(
-            ellipse at 25% 10%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 8%,
-            transparent 14%
-        ),
-        radial-gradient(
-            ellipse at 50% 12%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 9%,
-            transparent 15%
-        ),
-        radial-gradient(
-            ellipse at 75% 10%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 8%,
-            transparent 14%
-        ),
+        radial-gradient(ellipse at 25% 10%, rgba(70,130,180,0.45) 0%, rgba(70,130,180,0.35) 8%, transparent 14%),
+        radial-gradient(ellipse at 50% 12%, rgba(70,130,180,0.45) 0%, rgba(70,130,180,0.35) 9%, transparent 15%),
+        radial-gradient(ellipse at 75% 10%, rgba(70,130,180,0.45) 0%, rgba(70,130,180,0.35) 8%, transparent 14%),
 
-        /* High terrain / hills */
-        radial-gradient(
-            circle at 30% 40%,
-            #8b3a3a 0%,
-            #a0522d 25%,
-            transparent 55%
-        ),
-        radial-gradient(
-            circle at 70% 35%,
-            #7f2f2f 0%,
-            #9c4b2f 30%,
-            transparent 60%
-        ),
+        /* Hills */
+        radial-gradient(circle at 30% 40%, #8b3a3a 0%, #a0522d 25%, transparent 55%),
+        radial-gradient(circle at 70% 35%, #7f2f2f 0%, #9c4b2f 30%, transparent 60%),
 
-        /* Floodplain / lowland */
+        /* Floodplain to sea */
         linear-gradient(
             to bottom,
             #7fbf7f 0%,
@@ -66,55 +38,20 @@
             #6fa8dc 75%,
             #4a90c2 100%
         );
-          #cfd-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-}
-       @media (prefers-reduced-motion: reduce) {
-    #cfd-bg {
-        display: none;
-    }
+
+    background-attachment: fixed;
 }
 
-    header {
-        background-color: var(--accent);
-        color: white;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
+/* ================= LAYOUT ================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
 
-    nav {
-        margin-top: 12px;
-    }
-
-    nav a {
-        color: white;
-        margin-right: 18px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    nav a:hover {
-        color: #c8ffd8;
-    }
-
-    /* ===== Layout container ===== */
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 24px;
-    }
-
-    .hero {
-        background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-        padding: 48px 0;
-    }
-
-    .card {
+.card {
     background: rgba(255,255,255,0.92);
     border-radius: 14px;
     padding: 24px;
@@ -122,70 +59,61 @@
     backdrop-filter: blur(4px);
 }
 
-    .cta {
-        display: inline-block;
-        margin-top: 12px;
-        background-color: var(--accent);
-        color: white;
-        padding: 12px 22px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
-    }
+/* ================= HEADER ================= */
+header {
+    background-color: var(--accent);
+    color: white;
+    padding: 24px;
+}
 
-    .cta:hover {
-        background-color: var(--accent-dark);
-    }
+nav a {
+    color: white;
+    margin-right: 18px;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-    /* ===== Features ===== */
-    .features {
-        max-width: 1100px;
-        margin: 48px auto;
-        padding: 0 24px;
-    }
+nav a:hover {
+    color: #c8ffd8;
+}
 
-    .feature {
-        background: white;
-        padding: 28px;
-        border-radius: 14px;
-        margin-bottom: 28px;
-        border-left: 6px solid var(--accent);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-    }
+/* ================= HERO ================= */
+.hero {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    padding: 48px 0;
+}
 
-    .feature strong {
-        font-size: 20px;
-        color: var(--accent-dark);
-    }
+/* ================= FEATURES ================= */
+.features {
+    max-width: 1100px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
 
-    footer {
-        margin-top: 60px;
-        padding: 24px;
-        background: #e9f1ec;
-        text-align: center;
-    }
-       /* ===== Video popup modal ===== */
+.feature {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    border-left: 6px solid var(--accent);
+}
+
+/* ================= VIDEO MODAL ================= */
 .video-btn {
-    margin-top: 12px;
     display: inline-block;
+    margin-top: 10px;
     background: var(--accent);
     color: white;
     padding: 8px 14px;
     border-radius: 8px;
-    font-size: 14px;
     cursor: pointer;
-    text-decoration: none;
-}
-
-.video-btn:hover {
-    background: var(--accent-dark);
 }
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0,0,0,0.7);
     z-index: 999;
     justify-content: center;
     align-items: center;
@@ -197,165 +125,23 @@
     border-radius: 12px;
     width: 90%;
     max-width: 800px;
-    position: relative;
 }
 
-.modal-content iframe {
-    width: 100%;
-    height: 450px;
-    border-radius: 8px;
-    border: none;
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 60px;
+    padding: 24px;
+    background: #e9f1ec;
+    text-align: center;
 }
-
-.close-modal {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 22px;
-    cursor: pointer;
-    color: #333;
-}
-    
 </style>
 </head>
 
 <body>
-<canvas id="cfd-bg"></canvas>
-  <script>
-const canvas = document.getElementById("cfd-bg");
-const ctx = canvas.getContext("2d");
 
-let w, h;
-function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
-
-/* =========================
-   ZONE DEFINITIONS
-========================= */
-const riverEnd = h * 0.38;
-const damY = h * 0.42;
-const seaStart = h * 0.55;
-
-/* =========================
-   RIVER GEOMETRY (MULTI)
-========================= */
-const rivers = [
-    y => w * 0.25 + Math.sin(y * 0.002) * 40,
-    y => w * 0.5  + Math.sin(y * 0.002 + 2) * 50,
-    y => w * 0.75 + Math.sin(y * 0.002 + 4) * 35
-];
-
-/* =========================
-   STATIC BACKGROUND
-========================= */
-function drawBackground() {
-    // Floodplain
-    ctx.fillStyle = "#eef3ef";
-    ctx.fillRect(0, 0, w, h);
-
-    // Rivers
-    ctx.fillStyle = "#9bbecf";
-    for (let y = 0; y < riverEnd; y += 6) {
-        rivers.forEach(river => {
-            const x = river(y);
-            ctx.fillRect(x - 25, y, 50, 6);
-        });
-    }
-
-    // Dam body
-    ctx.fillStyle = "#666";
-    ctx.fillRect(0, damY - 8, w, 16);
-
-    // Spillway opening
-    ctx.clearRect(w * 0.45, damY - 8, w * 0.1, 16);
-
-    // Sea
-    ctx.fillStyle = "#7faec7";
-    ctx.fillRect(0, seaStart, w, h - seaStart);
-}
-
-drawBackground();
-
-/* =========================
-   RIVER FLOW PARTICLES
-========================= */
-const riverParticles = [];
-for (let i = 0; i < 500; i++) {
-    const y = Math.random() * riverEnd;
-    const r = rivers[Math.floor(Math.random() * rivers.length)];
-    riverParticles.push({
-        x: r(y) + (Math.random() - 0.5) * 40,
-        y: y,
-        river: r
-    });
-}
-
-/* =========================
-   SEA WAVES
-========================= */
-let wavePhase = 0;
-
-/* =========================
-   ANIMATION
-========================= */
-function animate() {
-    drawBackground();
-
-    /* ---- River flow ---- */
-    ctx.strokeStyle = "rgba(0,80,120,0.6)";
-    ctx.lineWidth = 0.7;
-
-    riverParticles.forEach(p => {
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-
-        p.y += 0.8;
-        p.x += (p.river(p.y) - p.x) * 0.05;
-
-        ctx.lineTo(p.x, p.y);
-        ctx.stroke();
-
-        // Reset after dam
-        if (p.y > damY) {
-            p.y = Math.random() * 20;
-            p.x = p.river(p.y) + (Math.random() - 0.5) * 40;
-        }
-    });
-
-    /* ---- Sea waves ---- */
-    ctx.strokeStyle = "rgba(255,255,255,0.5)";
-    ctx.lineWidth = 1;
-
-    for (let y = seaStart + 20; y < h; y += 25) {
-        ctx.beginPath();
-        for (let x = 0; x < w; x += 20) {
-            const wave = Math.sin(x * 0.02 + wavePhase + y * 0.02) * 4;
-            ctx.lineTo(x, y + wave);
-        }
-        ctx.stroke();
-    }
-
-    wavePhase += 0.04;
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-</script>
 <header>
-    <div class="logo" style="font-size:20px;font-weight:700;">PORTOFOLIO</div>
-
-    <div>
-        <div style="font-weight:800">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:4px">
-            Water Resource and Coastal Engineering
-        </div>
-    </div>
-
+    <div style="font-size:20px;font-weight:700;">PORTOFOLIO</div>
+    <div style="font-weight:800">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -363,269 +149,59 @@ animate();
     </nav>
 </header>
 
-
 <section class="hero">
     <div class="container">
         <div class="card">
-            <h1>Delivering Advanced Water Engineering Solutions on Land, Along the Coast, and Offshore</h1>
-            <p>
-                I work with a skilled engineering team to understand and solve complex water-related challenges.
-                Our projects span river basins, coastal zones, and offshore environments, combining numerical
-                modeling and practical field experience.
-            </p>
-            <a class="cta" href="#contact">Get in touch</a>
+            <h1>Advanced Water Engineering Solutions</h1>
+            <p>River, coastal, and offshore numerical modeling.</p>
         </div>
     </div>
 </section>
-
-
-<section class="features">
-
-    <div class="feature">
-        <strong>Academic Degrees</strong>
-        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
-            <p>
-                <b>Dr. Eng.</b> in Coastal and Ocean Engineering, Department of Civil Engineering,
-                Nagoya-Gifu University (Joint Degree Program) – Japan (Soon)
-            </p>
-            <p>
-                <b>M.T.</b> in Water Resource Engineering and Management, Department of Civil and Environmental Engineering,
-                Bandung Institute of Technology – Indonesia (2023)
-            </p>
-            <p>
-                <b>S.T.</b> in Water Resource Engineering and Management, Department of Civil and Environmental Engineering,
-                Bandung Institute of Technology – Indonesia (2021)
-            </p>
-        </div>
-    </div>
-
-    <div class="feature">
-        <strong>Publications</strong>
-        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
-            <p>1. Setting Up The Delft3D Model: Hydro-Morphodynamics of Tirang Beach Semarang Using Online Data.</p>
-            <p>2. Hydrodynamics Analysis in Bedono Beach, Demak Regency, Central Java, Indonesia.</p>
-            <p>3. Sedimentation Analysis with the Application of Permeable Structures at Bedono Beach, Indonesia.</p>
-        </div>
-    </div>
-
-    <div class="feature">
-        <strong>Working Experience</strong>
-        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
-            <p><b>2025–Present:</b> Doctoral Student, Nagoya-Gifu University (Joint Degree) – Japan</p>
-            <p style="padding-left:16px;">• Tsunami-borne debris research using FS3M</p>
-
-            <p><b>2025–Present:</b> Freelancer</p>
-            <p style="padding-left:16px;">• Instructure at Skillhunt.id</p>
-            <p style="padding-left:16px;">• Numerical Simulation Engineer (HEC-HMS, HEC-RAS, DELFT3D)</p>
-
-            <p><b>2022–2025:</b> Management Trainee, Brantas Abipraya – Indonesia</p>
-            <p style="padding-left:16px;">• Dam, bridge, and tunnel construction evaluation</p>
-
-            <p><b>2018–2022:</b> Research & Practicum Assistant, ITB</p>
-        </div>
-    </div>
-
-</section>
-
 
 <section id="about" class="container" style="margin-top:48px">
     <div class="card">
-        <h2 style="margin-top:0;color:var(--accent-dark)">About</h2>
-
-        <p style="color:var(--muted)">
-            I am a civil engineer with a strong background in water resources, coastal, and ocean engineering.
-            My academic and professional work focuses on understanding complex water-related processes
-            and translating them into practical engineering solutions.
-        </p>
-
-        <p style="color:var(--muted)">
-            My experience includes numerical modeling using tools such as HEC-HMS, HEC-RAS, and DELFT3D for
-            hydraulic and sediment transport analysis.
-            I have worked on river and coastal projects, as well as large-scale infrastructure
-            such as dams, tunnels, and bridges.
-        </p>
-
-        <p style="color:var(--muted)">
-            Currently, I am pursuing doctoral research in coastal and ocean engineering at Joint Degree Forefront Program at Nagoya and Gifu University (Japan), with a focus on
-            tsunami-borne debris and fluid–structure interaction, while also providing consulting and
-            educational services (Skillhunt.id).
+        <h2>About</h2>
+        <p class="muted">
+            Civil engineer specializing in water resources, coastal, and ocean engineering.
         </p>
     </div>
 </section>
 
-
-<section id="services" class="container" style="margin-top:48px">
-    <h2 style="margin-bottom:16px;color:var(--accent-dark)">Services</h2>
-
-    <div class="services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
-
-        <!-- Hydraulic & Hydrodynamic Modeling -->
-        <div class="card">
-            <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
-            <p style="color:var(--muted)">
-                Numerical simulation of rivers, coastal zones, and offshore environments using
-                HEC-HMS, HEC-RAS, and DELFT3D to support design, analysis, and decision-making.
-            </p>
-             <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
-                ▶ Watch demo flood control spillway (HEC-HMS)
-            </span>
-              <span class="video-btn" onclick="openModal('-8_tMpZPsm8')">
-                ▶ Watch demo river flood simulation (HEC-RAS)
-            </span>
-            <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
-                ▶ Watch demo coastal sediment transport (DELFT3D)
-            </span>
-        </div>
-
-        <!-- Academic Training Support -->
-        <div class="card">
-            <h4>Academic Training Support</h4>
-            <p style="color:var(--muted)">
-                Delivering academic training in numerical modeling to help graduate students become proficient in the application of numerical models.
-            </p>
-            <span class="video-btn" onclick="openModal('SqPDkjNBI9g')">
-                ▶ Watch demo Skillhunt.id (HEC-HMS)
-            </span>
-            
-        </div>
-
-    </div>  <!-- closes .services -->
-</section> <!-- ✅ CLOSE SERVICES SECTION -->
-
-<section id="comments" class="container" style="margin-top:48px;margin-bottom:64px">
+<section id="comments" class="container" style="margin-top:48px">
     <div class="card">
-        <h2 style="margin-top:0;color:var(--accent-dark)">Comments</h2>
-
-        <p style="color:var(--muted);margin-bottom:24px">
-            Feel free to leave comments, questions, or collaboration ideas.
-            You can sign in using your GitHub account.
-        </p>
-
-        <div class="giscus-wrapper">
-            <script src="https://giscus.app/client.js"
-                data-repo="rahimmustaqim/MYPortofolio"
-                data-repo-id="R_kgDOQlhJXg"
-                data-category="General"
-                data-category-id="DIC_kwDOQlhJXs4CzyAl"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-input-position="bottom"
-                data-theme="light"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-            </script>
-        </div>
-    </div>
-</section>
-    </div>
-</section>
-
-<section id="contact" class="container" style="margin-top:48px;margin-bottom:64px">
-    <div class="card">
-        <h2 style="margin-top:0;color:var(--accent-dark)">Contact</h2>
-
+        <h2>Comments</h2>
         <p style="color:var(--muted)">
-            If you would like to discuss a project or academic training for numerical modeling,
-            feel free to reach out through the following channels:
+            Sign in with GitHub to leave comments.
         </p>
 
-        <div style="margin-top:20px;line-height:1.8;color:var(--muted)">
-            <p>
-                📧 <strong>Email:</strong>
-                <a href="mailto:rahimmmustaqim37@gmail.com" style="color:var(--accent);text-decoration:none">
-                    rahimmmustaqim37@gmail.com
-                </a>
-            </p>
-
-            <p>
-                💬 <strong>WhatsApp:</strong>
-                <a href="https://wa.me/62895346189267" target="_blank"
-                   style="color:var(--accent);text-decoration:none">
-                    +62 895-3461-89267
-                </a>
-            </p>
-        </div>
-
-        <p style="color:var(--muted);margin-top:16px;font-size:14px">
-            I usually respond within 24 hours on working days.
-        </p>
+        <script src="https://giscus.app/client.js"
+            data-repo="rahimmustaqim/MYPortofolio"
+            data-repo-id="R_kgDOQlhJXg"
+            data-category="General"
+            data-category-id="DIC_kwDOQlhJXs4CzyAl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-theme="light"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 </section>
 
+<section id="contact" class="container" style="margin-top:48px">
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: rahimmmustaqim37@gmail.com</p>
+    </div>
+</section>
 
 <footer>
-    <div>© <span id="year"></span> Rahim Mustaqim</div>
-    <div style="font-size:13px;color:var(--muted)">
-        Advancing water, coastal, and ocean engineering through research and practice
-    </div>
+    © <span id="year"></span> Rahim Mustaqim
 </footer>
 
-
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-<div id="videoModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal(event)">✕</span>
-        <iframe id="videoFrame" allowfullscreen></iframe>
-    </div>
-</div>
-<script>
-function openModal(videoId) {
-    const modal = document.getElementById('videoModal');
-    const frame = document.getElementById('videoFrame');
 
-    frame.src = "https://www.youtube.com/embed/" + videoId;
-    modal.style.display = "flex";
-}
-
-function closeModal(e) {
-    if (e.target.classList.contains('modal') || e.target.classList.contains('close-modal')) {
-        const modal = document.getElementById('videoModal');
-        const frame = document.getElementById('videoFrame');
-
-        frame.src = "";
-        modal.style.display = "none";
-    }
-}
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
