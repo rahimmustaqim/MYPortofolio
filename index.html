@@ -5,71 +5,110 @@
     <title>My Portfolio</title>
 
     <!-- NAGOYA UNIVERSITY GREEN THEME -->
-    <style>
-        :root {
-            --accent: #007A33;        /* Nagoya University Green */
-            --accent-dark: #005A26;   /* Darker shade */
-            --muted: #6b8f7a;         /* Soft greenish-gray */
-            --background: #f4f7f5;    /* Light background */
-        }
+   <style>
+    :root {
+        /* Nagoya University Academic Green */
+        --accent: #006633;
+        --accent-dark: #004d26;
+        --muted: #5f7f6b;
+        --background: #f3f6f4;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--background);
-        }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: var(--background);
+        color: #1f2937;
+        line-height: 1.6;
+    }
 
-        header {
-            background-color: var(--accent);
-            color: white;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+    header {
+        background-color: var(--accent);
+        color: white;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 
-        nav {
-            margin-top: 10px;
-        }
+    nav {
+        margin-top: 12px;
+    }
 
-        nav a {
-            color: white;
-            margin-right: 16px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+    nav a {
+        color: white;
+        margin-right: 18px;
+        text-decoration: none;
+        font-weight: 600;
+    }
 
-        nav a:hover {
-            color: #c8ffd8;
-        }
+    nav a:hover {
+        color: #c8ffd8;
+    }
 
-        .hero {
-            background: linear-gradient(135deg, #007A33, #005A26);
-            color: white;
-            padding: 40px;
-        }
+    /* ===== Layout container ===== */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
 
-        .cta {
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-        }
+    .hero {
+        background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+        padding: 48px 0;
+    }
 
-        .cta:hover {
-            background-color: var(--accent-dark);
-        }
+    .card {
+        background: white;
+        padding: 28px;
+        border-radius: 14px;
+        border: 1px solid #dbe7df;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 16px;
-            border: 1px solid #cfe7d6;
-        }
-    </style>
+    .cta {
+        display: inline-block;
+        margin-top: 12px;
+        background-color: var(--accent);
+        color: white;
+        padding: 12px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .cta:hover {
+        background-color: var(--accent-dark);
+    }
+
+    /* ===== Features ===== */
+    .features {
+        max-width: 1100px;
+        margin: 48px auto;
+        padding: 0 24px;
+    }
+
+    .feature {
+        background: white;
+        padding: 28px;
+        border-radius: 14px;
+        margin-bottom: 28px;
+        border-left: 6px solid var(--accent);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .feature strong {
+        font-size: 20px;
+        color: var(--accent-dark);
+    }
+
+    footer {
+        margin-top: 60px;
+        padding: 24px;
+        background: #e9f1ec;
+        text-align: center;
+    }
+</style>
 </head>
 
 <body>
@@ -92,12 +131,14 @@
 </header>
 
 
-<section class="hero" style="color:#000;">
-    <div>
+<section class="hero">
+    <div class="container">
         <div class="card">
             <h1>Delivering Advanced Water Engineering Solutions on Land, Along the Coast, and Offshore</h1>
-            <p class="lead">
-                I work with a skilled engineering team to understand and solve complex water-related challenges.Our projects span river basins, coastal zones, and offshore environments, where we combine numerical modeling, hydrodynamics, sediment transport analysis, and practical field experience. Together, we turn technical complexity into clear, reliable solutions that help clients and communities make smarter, more sustainable, and future-ready decisions.
+            <p>
+                I work with a skilled engineering team to understand and solve complex water-related challenges.
+                Our projects span river basins, coastal zones, and offshore environments, combining numerical
+                modeling, hydrodynamics, sediment transport analysis, and practical field experience.
             </p>
             <a class="cta" href="#contact">Get in touch</a>
         </div>
@@ -105,59 +146,53 @@
 </section>
 
 
-<div class="features">
-<div class="feature">
-  <div class="icon"> </div>
-  <div>
-    <strong>Academic Degrees</strong>
-    <div style="color:var(--muted); font-size:14px; margin-top:4px;">
-      Dr. Eng. in Coastal and Ocean Engineering, Department of Civil Engineering, Nagoya-Gifu University (Joint Degree Program) - Japan (Soon)</p>
-      M.T. in Water Resource Engineering and Management, Department of Civil and Environtmental Engineering , Bandung Institute of Technology - Indonesia (2023)</p>
-      S.T. in Water Resource Engineering and Management, Department of Civil and Environtmental Engineering, Bandung Institute of Technology - Indonesia (2021)<br></p>
+<section class="features">
+
+    <div class="feature">
+        <strong>Academic Degrees</strong>
+        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
+            <p>
+                <b>Dr. Eng.</b> in Coastal and Ocean Engineering, Department of Civil Engineering,
+                Nagoya-Gifu University (Joint Degree Program) – Japan (Soon)
+            </p>
+            <p>
+                <b>M.T.</b> in Water Resource Engineering and Management, Department of Civil and Environmental Engineering,
+                Bandung Institute of Technology – Indonesia (2023)
+            </p>
+            <p>
+                <b>S.T.</b> in Water Resource Engineering and Management, Department of Civil and Environmental Engineering,
+                Bandung Institute of Technology – Indonesia (2021)
+            </p>
+        </div>
     </div>
-  </div>
-</div>
-<div class="feature">
-  <div class="icon"> </div>
-  <div>
-    <strong>Publications</strong>
-    <div style="color:var(--muted); font-size:14px; margin-top:4px;">
-      1. Setting Up The Delft3D Model: Hydro-Morphodynamics of Tirang Beach Semarang Using Online Data.</p>
-      2. Hydrodynamics Analysis in Bedono Beach Demak Regency, Central Java Indonesia: Open Resource Processing for Modelling.</p>
-      3. Sedimentation Analysis with The Application of Permeable Structures at Bedono Beach,Demak Regency, Central Java, Indonesia<br></p>
+
+    <div class="feature">
+        <strong>Publications</strong>
+        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
+            <p>1. Setting Up The Delft3D Model: Hydro-Morphodynamics of Tirang Beach Semarang Using Online Data.</p>
+            <p>2. Hydrodynamics Analysis in Bedono Beach, Demak Regency, Central Java, Indonesia.</p>
+            <p>3. Sedimentation Analysis with the Application of Permeable Structures at Bedono Beach, Indonesia.</p>
+        </div>
     </div>
-  </div>
-</div>
-<div class="feature">
-  <div class="icon"> </div>
-  <div>
-    <strong>Working Experience</strong>
-    <div style="color:var(--muted); font-size:14px; margin-top:4px;">
-      1. 2025–Present: Doctoral Student, Department of Civil Engineering, Nagoya University - Japan<br>
-         <p style="padding-left: 20px;">- Tsunami-borne debris researcher using Fluid Structure Interaction (FS3M) developed by Nakamura Tomoaki (Assoc. Prof) </p>
-      2. 2025-Present: Freelancer
-         <p style="padding-left: 20px;">- Lecturer of Skillhunt.id Start-up Company under Amreta Viryatama Engineering Consultant </p>
-         <p style="padding-left: 20px;">- Hydraulic Simulation using HEC-RAS for Diversion Channel Project in Borneo </p>
-         <p style="padding-left: 20px;">- Hydology and Sediment Simulation using HEC-HMS for Pakil Power Pump-up Storage, Filiphine, under Huangdong and Lapi-ITB </p>
-      3. 2022–2025: Management Trainee, Brantas Abipraya Company - Indoneisa.<br>
-         <p style="padding-left: 20px;">- Supervision and control of logistics, as well as the preparation of technical reports and project outcomes
-          at the elevated road and bridge project in the Karawang area, Indonesia </p>
-         <p style="padding-left: 20px;">- Conduct an evaluation of the effectiveness of heavy equipment used in the main dam embankment
-          construction at Sidan Dam, Bali Province, Indonesia </p>
-         <p style="padding-left: 20px;">- Perform a comprehensive evaluation of the spillway excavation and lining project at Budong-Budong
-          Dam, Mamuju, West Sulawesi, Indonesia. </p>
-         <p style="padding-left: 20px;">- Conduct an evaluation of the cycle time and excavation methods for the diversion tunnel construction
-          and formulate an effective method for the tunnel's concrete lining at Bener Dam, Purworejo, Indoneisia. </p><br>
-      4. 2018-2022: Research and Practicum Assistant, Bandung Institute of Technology - Indonesia.
-         <p style="padding-left: 20px;">- Organize and conduct several practicum events in the following subjects: Physics, Hydrology and
-          Hydraulics, Irrigation Management, and Coastal Protection. </p>
-         <p style="padding-left: 20px;">- Research Assistant at the Coastal Development Expertise Group, Bandung Institute of Technology. </p><br>
+
+    <div class="feature">
+        <strong>Working Experience</strong>
+        <div style="color:var(--muted); font-size:14px; margin-top:10px;">
+            <p><b>2025–Present:</b> Doctoral Student, Nagoya University – Japan</p>
+            <p style="padding-left:16px;">• Tsunami-borne debris research using FS3M</p>
+
+            <p><b>2025–Present:</b> Freelancer</p>
+            <p style="padding-left:16px;">• Lecturer at Skillhunt.id</p>
+            <p style="padding-left:16px;">• HEC-RAS & HEC-HMS Hydraulic and Sediment Simulations</p>
+
+            <p><b>2022–2025:</b> Management Trainee, Brantas Abipraya – Indonesia</p>
+            <p style="padding-left:16px;">• Dam, bridge, and tunnel construction evaluation</p>
+
+            <p><b>2018–2022:</b> Research & Practicum Assistant, ITB</p>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
+
+</section>
 
 
 <aside>
@@ -245,6 +280,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
 
