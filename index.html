@@ -30,9 +30,9 @@ body {
         var(--accent),
         var(--accent-dark)
     );
-    padding: 36px 24px;
+    padding: 40px 24px;
     text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
 }
 
 .header-inner {
@@ -40,44 +40,51 @@ body {
     margin: 0 auto;
 }
 
+/* Title */
 .site-title {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 800;
     letter-spacing: 2px;
     color: #ffffff;
 }
 
+/* Name */
 .author-name {
-    margin-top: 8px;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 21px;
     font-weight: 700;
     color: #ffffff;
 }
 
+/* Field */
 .author-field {
-    margin-top: 4px;
+    margin-top: 6px;
     font-size: 14px;
     color: #d6f5e3;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 }
 
+/* Navigation */
 .main-nav {
-    margin-top: 18px;
+    margin-top: 22px;
 }
 
 .main-nav a {
-    margin: 0 14px;
+    margin: 0 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #ffffff;
     text-decoration: none;
     position: relative;
+    padding-bottom: 6px;
 }
 
+/* Hover underline */
 .main-nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: 0;
     width: 0%;
     height: 2px;
     background: #c8ffd8;
@@ -88,20 +95,6 @@ body {
     width: 100%;
 }
 
-    nav {
-        margin-top: 12px;
-    }
-
-    nav a {
-        color: white;
-        margin-right: 18px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    nav a:hover {
-        color: #c8ffd8;
-    }
 
     /* ===== Layout container ===== */
     .container {
@@ -402,10 +395,9 @@ nav a:hover::after {
         <div class="card">
             <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
             <p style="color:var(--muted)">
-                <ul style="margin:8px 0 0 18px;color:var(--muted)">
    Numerical simulation of rivers, coastal zones, and offshore environments using
 HEC-HMS, HEC-RAS, and DELFT3D to support design, analysis, and decision-making.
-</ul>
+
             </p>
              <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
                 ▶ Watch demo flood control spillway (HEC-HMS)
@@ -533,6 +525,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
