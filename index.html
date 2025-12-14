@@ -66,7 +66,41 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     backdrop-filter: blur(4px);
 }
+section {
+    scroll-margin-top: 90px;
+}
 
+h1 {
+    font-size: 32px;
+    line-height: 1.25;
+}
+.services .card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services .card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 36px rgba(0,0,0,0.18),
+        0 6px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 
+        0 8px 24px rgba(0,0,0,0.12),
+        0 2px 6px rgba(0,0,0,0.06);
+}
     .cta {
         display: inline-block;
         margin-top: 12px;
@@ -159,6 +193,32 @@ body {
     font-size: 22px;
     cursor: pointer;
     color: #333;
+}
+       #giscus {
+    margin-top: 16px;
+}
+
+.giscus-wrapper {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+       nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #c8ffd8;
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
     
 </style>
@@ -283,8 +343,11 @@ body {
         <div class="card">
             <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
             <p style="color:var(--muted)">
-                Numerical simulation of rivers, coastal zones, and offshore environments using
-                HEC-HMS, HEC-RAS, and DELFT3D to support design, analysis, and decision-making.
+                <ul style="margin:8px 0 0 18px;color:var(--muted)">
+    <li>Flood risk and inundation analysis</li>
+    <li>Sediment transport and morphology</li>
+    <li>Coastal protection and structure assessment</li>
+</ul>
             </p>
              <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
                 ▶ Watch demo flood control spillway (HEC-HMS)
@@ -412,6 +475,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
