@@ -23,36 +23,44 @@ body {
 }
 }
 
-/* ===== Centered Full-Page Header with Square Profile Image ===== */
+/* ===== Modern Centered Header ===== */
 .main-header {
     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    padding: 60px 24px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-    text-align: center;          /* center all content */
+    padding: 80px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;      /* stack vertically */
+    text-align: center;
 }
 
-/* Inner container */
+/* Inner container for content */
 .header-inner {
     max-width: 800px;
     width: 100%;
     display: flex;
-    flex-direction: column;      /* stack vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
 }
 
-/* Profile photo (square) */
+/* Photo box with shadow */
+.photo-box {
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Profile photo inside the box */
 .profile-img {
     width: 140px;
-    height: 140px;               /* square */
+    height: 140px;
     object-fit: cover;
-    border-radius: 12px;         /* slightly rounded corners */
-    border: 4px solid rgba(255,255,255,0.85);
-    background: white;
+    border-radius: 12px; /* slightly rounded square */
 }
 
 /* Text block */
@@ -60,15 +68,15 @@ body {
     text-align: center;
 }
 
-/* Title */
+/* Site title */
 .site-title {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #ffffff;              /* white over green gradient */
+    color: #ffffff;
 }
 
-/* Name */
+/* Author name */
 .author-name {
     margin-top: 8px;
     font-size: 20px;
@@ -76,7 +84,7 @@ body {
     color: #f0f0f0;
 }
 
-/* Field */
+/* Author field */
 .author-field {
     margin-top: 4px;
     font-size: 16px;
@@ -102,7 +110,7 @@ body {
     padding-bottom: 4px;
 }
 
-/* Hover underline */
+/* Hover underline effect */
 .main-nav a::after {
     content: "";
     position: absolute;
@@ -116,6 +124,35 @@ body {
 
 .main-nav a:hover::after {
     width: 100%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+    .header-inner {
+        gap: 16px;
+    }
+
+    .photo-box {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .site-title {
+        font-size: 28px;
+    }
+
+    .author-name {
+        font-size: 18px;
+    }
+
+    .author-field {
+        font-size: 14px;
+    }
 }
 
     /* ===== Layout container ===== */
@@ -547,6 +584,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
