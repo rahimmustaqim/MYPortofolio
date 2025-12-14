@@ -19,63 +19,8 @@
     font-family: Arial, sans-serif;
     color: #1f2937;
     line-height: 1.6;
-
-    /* DEM-style terrain background */
-    background:
-        /* Rivers (top) */
-        radial-gradient(
-            ellipse at 25% 10%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 8%,
-            transparent 14%
-        ),
-        radial-gradient(
-            ellipse at 50% 12%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 9%,
-            transparent 15%
-        ),
-        radial-gradient(
-            ellipse at 75% 10%,
-            rgba(70,130,180,0.45) 0%,
-            rgba(70,130,180,0.35) 8%,
-            transparent 14%
-        ),
-
-        /* High terrain / hills */
-        radial-gradient(
-            circle at 30% 40%,
-            #8b3a3a 0%,
-            #a0522d 25%,
-            transparent 55%
-        ),
-        radial-gradient(
-            circle at 70% 35%,
-            #7f2f2f 0%,
-            #9c4b2f 30%,
-            transparent 60%
-        ),
-
-        /* Floodplain / lowland */
-        linear-gradient(
-            to bottom,
-            #7fbf7f 0%,
-            #a3cfa3 35%,
-            #d2b48c 55%,
-            #c2a26a 65%,
-            #6fa8dc 75%,
-            #4a90c2 100%
-        );
-          #cfd-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
+    background: #ffffff;
 }
-       @media (prefers-reduced-motion: reduce) {
-    #cfd-bg {
-        display: none;
-    }
 }
 
     header {
@@ -467,4 +412,5 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
