@@ -159,11 +159,91 @@
     cursor: pointer;
     color: #333;
 }
+       #cfd-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+       @media (prefers-reduced-motion: reduce) {
+    #cfd-bg {
+        display: none;
+    }
+}
 </style>
 </head>
 
 <body>
+<canvas id="cfd-bg"></canvas>
+    <script>
+const canvas = document.getElementById("cfd-bg");
+const ctx = canvas.getContext("2d");
 
+let w, h;
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+// flow field parameters
+const particles = [];
+const NUM = 900;
+const SPEED = 0.35;
+const SCALE = 0.002;
+
+for (let i = 0; i < NUM; i++) {
+    particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: 0,
+        vy: 0
+    });
+}
+
+function flow(x, y) {
+    const angle =
+        Math.sin(x * SCALE) +
+        Math.cos(y * SCALE);
+    return {
+        x: Math.cos(angle),
+        y: Math.sin(angle)
+    };
+}
+
+function animate() {
+    ctx.fillStyle = "rgba(243, 246, 244, 0.08)";
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.strokeStyle = "rgba(0, 102, 51, 0.35)";
+    ctx.lineWidth = 0.6;
+
+    for (let p of particles) {
+        const f = flow(p.x, p.y);
+        p.vx = f.x * SPEED;
+        p.vy = f.y * SPEED;
+
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+
+        if (p.x < 0 || p.x > w || p.y < 0 || p.y > h) {
+            p.x = Math.random() * w;
+            p.y = Math.random() * h;
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 <header>
     <div class="logo" style="font-size:20px;font-weight:700;">PORTOFOLIO</div>
 
@@ -409,6 +489,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
