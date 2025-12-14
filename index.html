@@ -32,17 +32,6 @@ body {
     align-items: center;
 }
 
-/* Floating card */
-.header-card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 32px 40px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    backdrop-filter: blur(6px);
-    max-width: 1000px;
-    width: 100%;
-}
-
 /* Inner container: side-by-side layout */
 .header-inner {
     display: flex;
@@ -75,7 +64,10 @@ body {
 /* Text block */
 .header-text {
     flex: 1;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    text-align: center;  /* text inside is centered */
 }
 
 /* Site title */
@@ -108,6 +100,7 @@ body {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center; /* center nav links */
 }
 
 .main-nav a {
@@ -140,12 +133,7 @@ body {
     .header-inner {
         flex-direction: column; /* stack photo and text vertically */
         align-items: center;
-        text-align: center;
         gap: 20px;
-    }
-
-    .header-text {
-        text-align: center;
     }
 
     .photo-box {
@@ -170,6 +158,7 @@ body {
         font-size: 14px;
     }
 }
+
 
     /* ===== Layout container ===== */
     .container {
@@ -351,26 +340,26 @@ nav a:hover::after {
 <body>
 
 <header class="main-header">
-    <div class="header-card">
-        <div class="header-inner">
-            <!-- Profile photo -->
-            <div class="photo-box">
-                <img src="rahim.jpg" alt="Rahim Mustaqim" class="profile-img">
-            </div>
+    <div class="header-inner">
 
-            <!-- Text content -->
-            <div class="header-text">
-                <div class="site-title">PORTOFOLIO</div>
-                <div class="author-name">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
-                <div class="author-field">Water Resource and Coastal Engineering</div>
-
-                <nav class="main-nav">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </div>
+        <!-- Profile photo -->
+        <div class="photo-box">
+            <img src="rahim.jpg" alt="Rahim Mustaqim" class="profile-img">
         </div>
+
+        <!-- Text content centered -->
+        <div class="header-text centered-text">
+            <div class="site-title">PORTOFOLIO</div>
+            <div class="author-name">Dr. Eng. (soon) Rahim Mustaqim, S.T., M.T.</div>
+            <div class="author-field">Water Resource and Coastal Engineering</div>
+
+            <nav class="main-nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+
     </div>
 </header>
 
@@ -604,6 +593,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
