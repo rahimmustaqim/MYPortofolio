@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>PORTOFOLIO</title>
 
     <!-- NAGOYA UNIVERSITY GREEN THEME -->
    <style>
@@ -308,26 +308,48 @@
         </div>
 
     </div>
-</section>
-<!-- Comment Section -->
-<section id="comments" style="margin-top:60px">
-  <h2>Comments</h2>
+<section id="comments" class="container" style="margin-top:48px">
+    <div class="card">
+        <h2 style="margin-top:0;color:var(--accent-dark)">
+            Comments & Rating
+        </h2>
 
-  <script src="https://giscus.app/client.js"
-      data-repo="USERNAME/REPOSITORY"
-      data-repo-id="REPO_ID"
-      data-category="General"
-      data-category-id="CATEGORY_ID"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="bottom"
-      data-theme="light"
-      data-lang="en"
-      crossorigin="anonymous"
-      async>
-  </script>
+        <p style="color:var(--muted);margin-bottom:16px">
+            Please rate this page and leave your comments or suggestions below.
+        </p>
+
+        <!-- STAR RATING -->
+        <div class="rating-box" style="margin-bottom:32px">
+            <span style="color:var(--muted);margin-right:8px">
+                Your rating:
+            </span>
+
+            <div class="stars">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+
+            <p id="rating-result" style="color:var(--muted);margin-top:8px;font-size:14px">
+                Not rated yet
+            </p>
+        </div>
+
+        <!-- GISCUS COMMENT SYSTEM -->
+        <script src="https://giscus.app/client.js"
+            data-repo="USERNAME/REPOSITORY"
+            data-repo-id="REPO_ID"
+            data-category="General"
+            data-category-id="CATEGORY_ID"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-theme="light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
 </section>
 
 <section id="contact" class="container" style="margin-top:48px;margin-bottom:64px">
@@ -401,6 +423,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
