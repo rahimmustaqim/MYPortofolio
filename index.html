@@ -177,7 +177,7 @@ backdrop-filter: blur(2px);
 
 <body>
 <canvas id="cfd-bg"></canvas>
-   <script>
+  <script>
 const canvas = document.getElementById("cfd-bg");
 const ctx = canvas.getContext("2d");
 
@@ -190,88 +190,112 @@ window.addEventListener("resize", resize);
 resize();
 
 /* =========================
-   RIVER GEOMETRY
+   ZONE DEFINITIONS
 ========================= */
-function riverCenter(y) {
-    return w * 0.45 + Math.sin(y * 0.0018) * 140;
-}
-
-function riverWidth(y) {
-    const estuary = y / h;
-    return 40 + estuary * 120;
-}
+const riverEnd = h * 0.38;
+const damY = h * 0.42;
+const seaStart = h * 0.55;
 
 /* =========================
-   TERRAIN (DEM STYLE)
+   RIVER GEOMETRY (MULTI)
 ========================= */
-function drawTerrain() {
-    for (let y = 0; y < h; y += 6) {
-        for (let x = 0; x < w; x += 6) {
-            const cx = riverCenter(y);
-            const rw = riverWidth(y);
-            const dist = Math.abs(x - cx);
+const rivers = [
+    y => w * 0.25 + Math.sin(y * 0.002) * 40,
+    y => w * 0.5  + Math.sin(y * 0.002 + 2) * 50,
+    y => w * 0.75 + Math.sin(y * 0.002 + 4) * 35
+];
 
-            let color;
+/* =========================
+   STATIC BACKGROUND
+========================= */
+function drawBackground() {
+    // Floodplain
+    ctx.fillStyle = "#eef3ef";
+    ctx.fillRect(0, 0, w, h);
 
-            if (dist < rw) {
-                // River channel
-                color = "rgb(160,190,200)";
-            } else if (dist < rw + 40) {
-                // Floodplain near river
-                color = "rgb(200,220,205)";
-            } else {
-                // Higher terrain
-                color = "rgb(225,235,225)";
-            }
-
-            ctx.fillStyle = color;
-            ctx.fillRect(x, y, 6, 6);
-        }
+    // Rivers
+    ctx.fillStyle = "#9bbecf";
+    for (let y = 0; y < riverEnd; y += 6) {
+        rivers.forEach(river => {
+            const x = river(y);
+            ctx.fillRect(x - 25, y, 50, 6);
+        });
     }
+
+    // Dam body
+    ctx.fillStyle = "#666";
+    ctx.fillRect(0, damY - 8, w, 16);
+
+    // Spillway opening
+    ctx.clearRect(w * 0.45, damY - 8, w * 0.1, 16);
+
+    // Sea
+    ctx.fillStyle = "#7faec7";
+    ctx.fillRect(0, seaStart, w, h - seaStart);
 }
 
+drawBackground();
+
 /* =========================
-   FLOW PARTICLES (WATER)
+   RIVER FLOW PARTICLES
 ========================= */
-const particles = [];
-for (let i = 0; i < 700; i++) {
-    const y = Math.random() * h;
-    const cx = riverCenter(y);
-    const rw = riverWidth(y);
-    particles.push({
-        x: cx + (Math.random() - 0.5) * rw,
-        y: y
+const riverParticles = [];
+for (let i = 0; i < 500; i++) {
+    const y = Math.random() * riverEnd;
+    const r = rivers[Math.floor(Math.random() * rivers.length)];
+    riverParticles.push({
+        x: r(y) + (Math.random() - 0.5) * 40,
+        y: y,
+        river: r
     });
 }
 
-function animate() {
-    drawTerrain();
+/* =========================
+   SEA WAVES
+========================= */
+let wavePhase = 0;
 
-    ctx.strokeStyle = "rgba(0,90,120,0.55)";
+/* =========================
+   ANIMATION
+========================= */
+function animate() {
+    drawBackground();
+
+    /* ---- River flow ---- */
+    ctx.strokeStyle = "rgba(0,80,120,0.6)";
     ctx.lineWidth = 0.7;
 
-    for (let p of particles) {
-        const cx = riverCenter(p.y);
-        const rw = riverWidth(p.y);
-        const estuary = p.y / h;
-
+    riverParticles.forEach(p => {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
 
-        p.x += (cx - p.x) * 0.02;
-        p.y += 0.7 - estuary * 0.3;
+        p.y += 0.8;
+        p.x += (p.river(p.y) - p.x) * 0.05;
 
         ctx.lineTo(p.x, p.y);
         ctx.stroke();
 
-        if (
-            p.y > h ||
-            Math.abs(p.x - riverCenter(p.y)) > riverWidth(p.y)
-        ) {
-            p.y = 0;
-            p.x = riverCenter(p.y) + (Math.random() - 0.5) * riverWidth(p.y);
+        // Reset after dam
+        if (p.y > damY) {
+            p.y = Math.random() * 20;
+            p.x = p.river(p.y) + (Math.random() - 0.5) * 40;
         }
+    });
+
+    /* ---- Sea waves ---- */
+    ctx.strokeStyle = "rgba(255,255,255,0.5)";
+    ctx.lineWidth = 1;
+
+    for (let y = seaStart + 20; y < h; y += 25) {
+        ctx.beginPath();
+        for (let x = 0; x < w; x += 20) {
+            const wave = Math.sin(x * 0.02 + wavePhase + y * 0.02) * 4;
+            ctx.lineTo(x, y + wave);
+        }
+        ctx.stroke();
     }
+
+    wavePhase += 0.04;
 
     requestAnimationFrame(animate);
 }
@@ -524,6 +548,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
