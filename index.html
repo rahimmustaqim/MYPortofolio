@@ -189,55 +189,95 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
-// flow field parameters
-const particles = [];
-const NUM = 900;
-const SPEED = 0.6;
-const SCALE = 0.002;
+/* =====================
+   TERRAIN (DEM STYLE)
+===================== */
+function terrain(x, y) {
+    return (
+        Math.sin(x * 0.001) * 0.5 +
+        Math.cos(y * 0.0012) * 0.5 +
+        Math.sin((x + y) * 0.0007)
+    );
+}
 
-for (let i = 0; i < NUM; i++) {
+function drawTerrain() {
+    const img = ctx.createImageData(w, h);
+    for (let y = 0; y < h; y += 2) {
+        for (let x = 0; x < w; x += 2) {
+            const e = terrain(x, y);
+            const v = Math.floor(220 - e * 25);
+            const i = (y * w + x) * 4;
+            img.data[i] = v;
+            img.data[i + 1] = v + 8;
+            img.data[i + 2] = v;
+            img.data[i + 3] = 255;
+        }
+    }
+    ctx.putImageData(img, 0, 0);
+}
+
+/* =====================
+   RIVER CENTERLINE
+===================== */
+function riverCenter(y) {
+    return w * 0.45 + Math.sin(y * 0.002) * 120;
+}
+
+/* =====================
+   FLOW FIELD
+===================== */
+function flow(x, y) {
+    const cx = riverCenter(y);
+    const dist = Math.abs(x - cx);
+
+    const estuary = y / h;
+    const width = 40 + estuary * 140;
+
+    if (dist < width) {
+        return {
+            x: (x - cx) * 0.01,
+            y: 1.2 - estuary * 0.6
+        };
+    }
+
+    return { x: 0, y: 0 };
+}
+
+/* =====================
+   PARTICLES (FLOW)
+===================== */
+const particles = [];
+for (let i = 0; i < 700; i++) {
     particles.push({
         x: Math.random() * w,
-        y: Math.random() * h,
-        vx: 0,
-        vy: 0
+        y: Math.random() * h
     });
 }
 
-function flow(x, y) {
-    const angle =
-        Math.sin(x * SCALE) +
-        Math.cos(y * SCALE);
-    return {
-        x: Math.cos(angle),
-        y: Math.sin(angle)
-    };
-}
-
 function animate() {
-    ctx.fillStyle = "rgba(243, 246, 244, 0.03)";
+    drawTerrain();
+
+    ctx.fillStyle = "rgba(243,246,244,0.15)";
     ctx.fillRect(0, 0, w, h);
 
-    ctx.strokeStyle = "rgba(0, 102, 51, 0.55)";
-    ctx.lineWidth = 0.6;
+    ctx.strokeStyle = "rgba(0,102,51,0.55)";
+    ctx.lineWidth = 0.7;
 
     for (let p of particles) {
         const f = flow(p.x, p.y);
-        p.vx = f.x * SPEED;
-        p.vy = f.y * SPEED;
 
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
 
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += f.x;
+        p.y += f.y;
 
         ctx.lineTo(p.x, p.y);
         ctx.stroke();
 
-        if (p.x < 0 || p.x > w || p.y < 0 || p.y > h) {
-            p.x = Math.random() * w;
-            p.y = Math.random() * h;
+        if (p.y > h || p.x < 0 || p.x > w) {
+            p.y = Math.random() * 50;
+            p.x = riverCenter(p.y) + (Math.random() - 0.5) * 80;
         }
     }
 
@@ -493,6 +533,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
