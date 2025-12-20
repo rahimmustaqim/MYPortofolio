@@ -359,7 +359,22 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
-    
+/* ===== Sticky Header Shrink Effect ===== */
+.main-header {
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-header.scrolled {
+    padding: 12px 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+       .main-nav a.active {
+    color: var(--accent);
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
 </style>
 </head>
 
@@ -615,8 +630,43 @@ function closeModal(e) {
     }
 }
 </script>
+<script>
+/* ===== Header shrink on scroll ===== */
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+/* ===== Active navigation highlight ===== */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".main-nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
 </body>
 </html>
+
 
 
 
