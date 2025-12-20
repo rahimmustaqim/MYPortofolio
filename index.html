@@ -156,17 +156,34 @@ body {
     position: relative;
     padding-bottom: 4px;
 }
-    .hire-btn {
+    /* Hire Me button */
+.hire-btn {
+    margin-left: 16px;          /* jarak horizontal dari Contact */
+    margin-top: 8px;            /* NAIKKAN tombol (tidak nempel) */
+    padding: 8px 18px;
     background: var(--accent);
-    color: white !important;
-    padding: 8px 14px;
-    border-radius: 8px;
+    color: #ffffff !important;
+    border-radius: 10px;
     font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .hire-btn:hover {
     background: var(--accent-dark);
-}   
+    transform: translateY(-2px); /* efek naik elegan */
+}
+
+/* Mobile tuning */
+@media (max-width: 800px) {
+    .hire-btn {
+        margin-left: 0;
+        margin-top: 12px;       /* lebih lega di HP */
+        align-self: flex-start; /* tetap kiri */
+    }
+}
 
 .main-nav a::after {
     content: "";
@@ -464,6 +481,7 @@ nav a:hover::after {
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
+                
                 <a href="#contact" class="hire-btn">Hire Me</a>
             </nav>
         </div>
@@ -818,6 +836,7 @@ window.addEventListener("scroll", () => {
 </script>
 </body>
 </html>
+
 
 
 
