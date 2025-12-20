@@ -25,12 +25,16 @@ body {
 
 /* ===== Main Header ===== */
 .main-header {
-    background: linear-gradient(
-        135deg,
-        var(--accent, #006633),
-        var(--accent-dark, #004d26)
-    );
-    padding: 48px 0; /* konsisten dengan hero */
+    background: #ffffff;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #e5e7eb;
 }
 
 /* Inner container: side-by-side layout */
@@ -189,7 +193,7 @@ body {
     backdrop-filter: blur(4px);
 }
 section {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 80px;
 }
 
 h1 {
@@ -613,6 +617,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
