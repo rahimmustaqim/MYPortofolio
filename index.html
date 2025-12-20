@@ -156,6 +156,17 @@ body {
     position: relative;
     padding-bottom: 4px;
 }
+    .hire-btn {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.hire-btn:hover {
+    background: var(--accent-dark);
+}   
 
 .main-nav a::after {
     content: "";
@@ -392,14 +403,14 @@ nav a:hover::after {
         <div class="header-text">
             <div class="site-title">Rahim Mustaqim, MSc (Eng.)</div>
             <div class="author-name">Hydraulic & Coastal Engineering Consultant</div>
-            <div class="author-field">
-                Delivering expert numerical modeling & engineering analysis
+            <div class="author-field">Independent Consultant specialising in numerical modelling and water-related engineering problems
             </div>
 
             <nav class="main-nav">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
+                <a href="#contact" class="hire-btn">Hire Me</a>
             </nav>
         </div>
 
@@ -413,6 +424,9 @@ nav a:hover::after {
         <div class="card">
             <h1>Delivering Engineering Solutions for Complex Water Systems on Land and Along the Coast</h1>
             <p>
+                <p style="color:var(--muted);font-size:14px;margin-top:12px">
+    ✔ Clear communication &nbsp;•&nbsp; Research-based approach &nbsp;•&nbsp; Practical engineering judgement
+</p>
                 I provide engineering consulting services to analyse and solve complex water-related challenges. My work covers river basins, flood-prone areas, and coastal zones with a strong focus on numerical modelling, data-driven analysis, and practical engineering solutions.
             </p>
             <a class="cta" href="#contact">Get in touch</a>
@@ -666,6 +680,7 @@ window.addEventListener("scroll", () => {
 </script>
 </body>
 </html>
+
 
 
 
