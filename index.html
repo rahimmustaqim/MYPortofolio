@@ -77,21 +77,22 @@ body {
     flex-wrap: wrap;
 }
 
-/* Center nav links on mobile only */
 @media (max-width: 800px) {
     .header-inner {
-        flex-direction: column; /* stack photo above text */
-        align-items: center; /* center all content horizontally */
-        text-align: center;  /* text inside centered */
+        flex-direction: column;      /* tetap stack */
+        align-items: flex-start;     /* kiri */
+        text-align: left;            /* kiri */
         gap: 20px;
     }
 
     .header-text {
-        align-items: center; /* center text under photo */
-        text-align: center;
+        align-items: flex-start;     /* kiri */
+        text-align: left;            /* kiri */
+        width: 100%;
     }
 
     .photo-box {
+        align-self: flex-start;      /* foto ikut kiri */
         width: 130px;
         height: 130px;
     }
@@ -114,7 +115,7 @@ body {
     }
 
     .main-nav {
-        justify-content: center; /* center nav links on mobile */
+        justify-content: flex-start; /* nav kiri */
     }
 }
 
@@ -596,6 +597,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
