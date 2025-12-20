@@ -631,66 +631,62 @@ and Delft3D to support planning, design, and decision-making.
 
 <section id="contact" class="container" style="margin-top:48px;margin-bottom:64px">
     <div class="card">
-        <h2 style="margin-top:0;color:var(--accent-dark)">Contact Me</h2>
+        <h2 style="margin-top:0;color:var(--accent-dark)">Project Inquiry</h2>
 
-        <p style="color:var(--muted); font-size:16px; margin-bottom:18px;">
-            Interested in working together or discussing a project?  
-            Send your message below — I usually respond within 24 hours on working days.
+        <p style="color:var(--muted)">
+            Please provide a brief overview of your project or research needs.
+            I typically respond within 24 hours on working days.
         </p>
 
-        <!-- ===== Interactive Contact Form (via Formspree) ===== -->
-        <form action="https://formspree.io/f/xwkgrqny" method="POST" class="contact-form">
+        <form action="mailto:rahimmmustaqim37@gmail.com" method="post" enctype="text/plain"
+              style="margin-top:24px;display:grid;gap:16px">
 
-    <label>
-        Your Name
-        <input type="text" name="name" placeholder="e.g. Jane Doe" required>
-    </label>
+            <div>
+                <label><b>Your Name</b></label>
+                <input type="text" name="Name" required
+                       placeholder="e.g. John Smith"
+                       style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
+            </div>
 
-    <label>
-        Your Email
-        <input type="email" name="email" placeholder="e.g. jane@example.com" required>
-    </label>
+            <div>
+                <label><b>Email Address</b></label>
+                <input type="email" name="Email" required
+                       placeholder="e.g. john@company.com"
+                       style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
+            </div>
 
-    <label>
-        Project / Inquiry
-        <textarea name="message" rows="5" placeholder="Describe your project or question" required></textarea>
-    </label>
+            <div>
+                <label><b>Project Type</b></label>
+                <select name="Project Type"
+                        style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
+                    <option>Flood & Hydraulic Modelling (HEC-RAS)</option>
+                    <option>Hydrology & Rainfall-Runoff (HEC-HMS)</option>
+                    <option>Coastal & Sediment Modelling (Delft3D)</option>
+                    <option>Academic / Research Support</option>
+                    <option>Other</option>
+                </select>
+            </div>
 
-    <div class="contact-submit">
-        <button type="submit" class="cta" style="width:100%;">
-            📩 Send Message
-        </button>
-    </div>
+            <div>
+                <label><b>Project Description</b></label>
+                <textarea name="Message" rows="5" required
+                          placeholder="Briefly describe your objectives, location, and expected outputs"
+                          style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db"></textarea>
+            </div>
 
-</form>
+            <button type="submit"
+                    style="margin-top:12px;background:var(--accent);color:white;
+                           padding:14px;border:none;border-radius:10px;
+                           font-size:16px;font-weight:700;cursor:pointer">
+                Send Project Inquiry
+            </button>
+        </form>
 
-        <hr style="margin:32px 0; border:0; border-top:1px solid #ececec;">
-
-        <!-- Direct Contact Options -->
-        <div style="font-size:15px; color:var(--muted); line-height:1.8;">
-            <p>
-                📧 <strong>Email:</strong>
-                <a href="mailto:rahimmmustaqim37@gmail.com" style="color:var(--accent); text-decoration:none">
-                    rahimmmustaqim37@gmail.com
-                </a>
-            </p>
-
-            <p>
-                💬 <strong>WhatsApp:</strong>
-                <a href="https://wa.me/62895346189267" target="_blank"
-                   style="color:var(--accent); text-decoration:none">
-                    +62 895-3461-89267
-                </a>
-            </p>
-
-            <p>
-                📌 <strong>Location:</strong> Japan 🇯🇵 (available for remote international consulting)
-            </p>
+        <div style="margin-top:28px;font-size:14px;color:var(--muted)">
+            ✔ Based in Japan · Available for international remote consulting<br>
+            ✔ Academic & professional background in hydraulic & coastal engineering<br>
+            ✔ Clear communication and research-based engineering judgement
         </div>
-
-        <p style="color:var(--muted);margin-top:16px;font-size:13px">
-            I usually respond within 24 hours on working days.
-        </p>
     </div>
 </section>
 
@@ -767,6 +763,7 @@ window.addEventListener("scroll", () => {
 </script>
 </body>
 </html>
+
 
 
 
