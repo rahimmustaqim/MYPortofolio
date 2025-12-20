@@ -37,8 +37,7 @@ body {
 .header-inner {
     display: flex;
     align-items: center;      /* sejajar vertikal foto & teks */
-    gap: 32px;
-    flex-wrap: wrap;          /* stack di layar kecil */
+    gap: 24px;
     max-width: 1100px;
     margin: 0 auto;           /* sejajar dengan section lain */
     padding: 0 24px;          /* sama dengan .container */
@@ -82,40 +81,46 @@ body {
 
 @media (max-width: 800px) {
     .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .header-text {
-        align-items: flex-start;
-        text-align: left;
-        width: 100%;
+        flex-direction: row;     /* tetap satu baris */
+        align-items: center;
+        gap: 16px;
     }
 
     .photo-box {
-        width: 130px;
-        height: 130px;
+        width: 110px;
+        height: 110px;
+        flex-shrink: 0;          /* foto TIDAK pindah */
     }
 
     .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .header-text {
+        flex: 1;
+        min-width: 0;            /* teks boleh wrap */
     }
 
     .site-title {
-        font-size: 28px;
+        font-size: 22px;
+        line-height: 1.25;
     }
 
     .author-name {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .author-field {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .main-nav {
+        gap: 12px;
+        margin-top: 10px;
     }
 }
-
 /* Header text - for white background */
 .site-title {
     font-size: 34px;
@@ -609,6 +614,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
