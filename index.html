@@ -25,20 +25,23 @@ body {
 
 /* ===== Main Header ===== */
 .main-header {
-    background: linear-gradient(135deg, var(--accent, #006633), var(--accent-dark, #004d26));
-    padding: 60px 24px;
-    display: flex;
-    justify-content: center; /* center the entire content horizontally */
+    background: linear-gradient(
+        135deg,
+        var(--accent, #006633),
+        var(--accent-dark, #004d26)
+    );
+    padding: 48px 0; /* konsisten dengan hero */
 }
 
 /* Inner container: side-by-side layout */
 .header-inner {
     display: flex;
-    align-items: center; /* vertical center of photo & text */
-    justify-content: center; /* center the whole block horizontally */
+    align-items: center;      /* sejajar vertikal foto & teks */
     gap: 32px;
-    flex-wrap: wrap; /* allow stacking on smaller screens */
+    flex-wrap: wrap;          /* stack di layar kecil */
     max-width: 1100px;
+    margin: 0 auto;           /* sejajar dengan section lain */
+    padding: 0 24px;          /* sama dengan .container */
     width: 100%;
 }
 
@@ -64,7 +67,7 @@ body {
 .header-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* left-aligned next to photo on desktop */
+    align-items: flex-start;
     text-align: left;
     flex: 1;
 }
@@ -79,20 +82,18 @@ body {
 
 @media (max-width: 800px) {
     .header-inner {
-        flex-direction: column;      /* tetap stack */
-        align-items: flex-start;     /* kiri */
-        text-align: left;            /* kiri */
+        flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
     }
 
     .header-text {
-        align-items: flex-start;     /* kiri */
-        text-align: left;            /* kiri */
+        align-items: flex-start;
+        text-align: left;
         width: 100%;
     }
 
     .photo-box {
-        align-self: flex-start;      /* foto ikut kiri */
         width: 130px;
         height: 130px;
     }
@@ -113,34 +114,28 @@ body {
     .author-field {
         font-size: 14px;
     }
-
-    .main-nav {
-        justify-content: flex-start; /* nav kiri */
-    }
 }
 
-/* Site title */
+/* Header text */
 .site-title {
     font-size: 34px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #000;
+    color: #ffffff;
 }
 
-/* Author name */
 .author-name {
     margin-top: 8px;
     font-size: 20px;
     font-weight: 700;
-    color: #000;
+    color: #ffffff;
 }
 
-/* Author field */
 .author-field {
     margin-top: 4px;
     font-size: 16px;
-    color: #000;
     letter-spacing: 0.5px;
+    color: #e6f5ec;
 }
 
 /* Navigation links */
@@ -611,6 +606,7 @@ function closeModal(e) {
 </script>
 </body>
 </html>
+
 
 
 
