@@ -519,6 +519,44 @@ nav a:hover::after {
         height: 200px;
     }
 }
+  /* ===== Service Evidence / Documents ===== */
+.service-docs {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.service-docs-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 8px;
+}
+
+.service-doc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.service-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    background: #f3f6f4;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #1f2937;
+    transition: all 0.2s ease;
+}
+
+.service-doc:hover {
+    background: #e9f1ec;
+    transform: translateY(-2px);
+}
 </style>
 </head>
 
@@ -648,6 +686,30 @@ nav a:hover::after {
                     <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
                         ▶ Coastal sediment transport (Delft3D)
                     </span>
+                 <div class="service-docs">
+    <div class="service-docs-title">Supporting Evidence</div>
+    <div class="service-doc-list">
+
+        <a href="docs/flood-modelling-report.pdf"
+           target="_blank"
+           class="service-doc">
+            📄 Flood Modelling Report (PDF)
+        </a>
+
+        <a href="docs/hec-ras-simulation-output.zip"
+           class="service-doc">
+            🗂️ HEC-RAS Simulation Files
+        </a>
+
+        <a href="https://doi.org/10.5614/jts.2022.29.3.3"
+           target="_blank"
+           class="service-doc">
+            📘 Journal Publication (DOI)
+        </a>
+
+    </div>
+</div>
+                    
                 </div>
             </div>
 
@@ -668,6 +730,7 @@ nav a:hover::after {
                     <span class="video-btn" onclick="openModal('SqPDkjNBI9g')">
                         ▶ Skillhunt.id training demo (HEC-HMS)
                     </span>
+             
                 </div>
             </div>
 
@@ -843,6 +906,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
