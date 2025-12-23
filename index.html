@@ -457,6 +457,68 @@ nav a:hover::after {
         grid-column: span 1;
     }
 }
+/* ===== Services Vertical Layout ===== */
+.services-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Service item */
+.service-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover UX motion */
+.service-item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.15),
+        0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Service image */
+.service-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Service content */
+.service-content h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--accent-dark);
+}
+
+.service-content p {
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* Video buttons spacing */
+.service-content .video-btn {
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+/* Mobile optimization */
+@media (max-width: 800px) {
+    .service-item {
+        grid-template-columns: 1fr;
+    }
+
+    .service-img {
+        height: 200px;
+    }
+}
 </style>
 </head>
 
@@ -556,49 +618,62 @@ nav a:hover::after {
      </div>
 </section>
 
+<section id="services" class="container" style="margin-top:48px;margin-bottom:64px">
+    <div class="card">
+        <h2 style="margin-top:0;color:var(--accent-dark)">Services</h2>
 
-<section id="services" class="container" style="margin-top:48px">
-    <h2 style="margin-bottom:16px;color:var(--accent-dark)">Services</h2>
+        <div class="services-vertical">
 
-    <div class="services" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+            <!-- Service 1 -->
+            <div class="service-item card">
+                <img src="service-hydraulic.jpg"
+                     alt="Hydrology and Hydraulic Modelling"
+                     class="service-img">
 
-        <!-- Hydraulic & Hydrodynamic Modeling -->
-        <div class="card">
-            <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
-            <p style="color:var(--muted)">
-   Numerical modelling and engineering analysis of river systems,
-flood-prone areas, and coastal zones using HEC-HMS, HEC-RAS,
-and Delft3D to support planning, design, and decision-making.
+                <div class="service-content">
+                    <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
+                    <p>
+                        Numerical modelling and engineering analysis of river systems,
+                        flood-prone areas, and coastal zones using
+                        <b>HEC-HMS, HEC-RAS, and Delft3D</b> to support planning,
+                        design, and decision-making.
+                    </p>
 
-            </p>
-             <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
-                ▶ Watch demo flood control spillway (HEC-HMS)
-            </span>
-              <span class="video-btn" onclick="openModal('-8_tMpZPsm8')">
-                ▶ Watch demo river flood simulation (HEC-RAS)
-            </span>
-            <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
-                ▶ Watch demo coastal sediment transport (DELFT3D)
-            </span>
+                    <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
+                        ▶ Flood control spillway (HEC-HMS)
+                    </span>
+                    <span class="video-btn" onclick="openModal('-8_tMpZPsm8')">
+                        ▶ River flood simulation (HEC-RAS)
+                    </span>
+                    <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
+                        ▶ Coastal sediment transport (Delft3D)
+                    </span>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item card">
+                <img src="service-training.jpg"
+                     alt="Academic Training Support"
+                     class="service-img">
+
+                <div class="service-content">
+                    <h4>Academic Training Support</h4>
+                    <p>
+                        Structured training and technical guidance in numerical modelling
+                        for graduate students and early-career engineers, with emphasis
+                        on practical implementation and research-based workflows.
+                    </p>
+
+                    <span class="video-btn" onclick="openModal('SqPDkjNBI9g')">
+                        ▶ Skillhunt.id training demo (HEC-HMS)
+                    </span>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Academic Training Support -->
-        <div class="card">
-            <h4>Academic Training Support</h4>
-            <p style="color:var(--muted)">
-                Providing structured training and technical guidance in numerical modelling for graduate students and early-career engineers, with a focus on practical application and research-based methods.
-            </p>
-            <span class="video-btn" onclick="openModal('SqPDkjNBI9g')">
-                ▶ Watch demo Skillhunt.id (HEC-HMS)
-            </span>
-            
-        </div>
-
-    </div>  <!-- closes .services -->
-</section> <!-- ✅ CLOSE SERVICES SECTION -->
-
-
-
+    </div>
+</section>
 
 <section id="contact" class="container" style="margin-top:48px;margin-bottom:64px">
     <div class="card">
@@ -768,6 +843,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
