@@ -626,6 +626,45 @@ nav a:hover::after {
         grid-template-columns: 1fr;
     }
 }
+    /* ===== Academic Qualification Evidence ===== */
+.academic-evidence {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.academic-evidence-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+}
+
+.academic-evidence-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.academic-evidence-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    background: #f3f6f4;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.academic-evidence-item:hover {
+    background: #e9f1ec;
+    transform: translateY(-2px);
+}
 </style>
 </head>
 
@@ -688,6 +727,37 @@ nav a:hover::after {
                 Bandung Institute of Technology, Indonesia (2021)
             </li>
         </ul>
+         <div class="academic-evidence">
+    <div class="academic-evidence-title">
+        Academic Qualification Evidence
+    </div>
+
+    <div class="academic-evidence-list">
+        <a href="docs/msc-degree-completion.pdf"
+           target="_blank"
+           class="academic-evidence-item">
+            🎓 Certificate of Degree Completion (MSc)
+        </a>
+
+        <a href="docs/msc-academic-transcript.pdf"
+           target="_blank"
+           class="academic-evidence-item">
+            📄 Academic Transcript (Summary)
+        </a>
+
+        <a href="docs/msc-thesis.pdf"
+           target="_blank"
+           class="academic-evidence-item">
+            📘 Master Thesis (PDF)
+        </a>
+
+        <a href="https://repository.itb.ac.id/xxxxx"
+           target="_blank"
+           class="academic-evidence-item">
+            🔗 Thesis Repository (ITB)
+        </a>
+    </div>
+</div>
         
   <hr style="margin:24px 0;border:none;border-top:1px solid #e5e7eb">
         <h4 style="margin-bottom:8px;color:var(--accent-dark)">
@@ -992,6 +1062,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
