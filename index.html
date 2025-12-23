@@ -557,6 +557,75 @@ nav a:hover::after {
     background: #e9f1ec;
     transform: translateY(-2px);
 }
+    /* ===== Service Documents ===== */
+.service-docs {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+}
+
+.service-docs-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 8px;
+}
+
+.service-doc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.service-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    background: #f3f6f4;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    color: #1f2937;
+    transition: all 0.2s ease;
+}
+
+.service-doc:hover {
+    background: #e9f1ec;
+    transform: translateY(-2px);
+}
+
+/* ===== Service Project Info ===== */
+.service-project {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.service-project-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 6px 14px;
+    font-size: 13.5px;
+}
+
+.project-meta span {
+    color: var(--muted);
+}
+
+@media (max-width: 700px) {
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
@@ -608,7 +677,7 @@ nav a:hover::after {
 
         <ul style="color:var(--muted);font-size:14px;line-height:1.7;padding-left:18px">
             <li>
-                <b>Dr (Eng.)</b> – Civil Engineering, Department of Civil Engineering, Graduate School of Engineering, Nagoya University, Japan (Candidate)
+                <b>Dr (Eng.)</b> – Civil Engineering, Department of Civil Engineering, Graduate School of Engineering, Nagoya University, Japan (D1)
             </li>
             <li>
                 <b>MSc (Eng.)</b> – Water Resources Engineering & Management, Department of Civil and Environmental Engineering,
@@ -662,50 +731,84 @@ nav a:hover::after {
 
         <div class="services-vertical">
 
-            <!-- Service 1 -->
-            <div class="service-item card">
-                <img src="service-hydraulic.jpg"
-                     alt="Hydrology and Hydraulic Modelling"
-                     class="service-img">
+           <!-- Service 1 -->
+<div class="service-item card">
+    <img src="service-hydraulic.jpg"
+         alt="Hydrology and Hydraulic Modelling"
+         class="service-img">
 
-                <div class="service-content">
-                    <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
-                    <p>
-                        Numerical modelling and engineering analysis of river systems,
-                        flood-prone areas, and coastal zones using
-                        <b>HEC-HMS, HEC-RAS, and Delft3D</b> to support planning,
-                        design, and decision-making.
-                    </p>
+    <div class="service-content">
+        <h4>Hydrology, Hydraulic & Hydrodynamic Modeling</h4>
 
-                    <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
-                        ▶ Flood control spillway (HEC-HMS)
-                    </span>
-                    <span class="video-btn" onclick="openModal('-8_tMpZPsm8')">
-                        ▶ River flood simulation (HEC-RAS)
-                    </span>
-                    <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
-                        ▶ Coastal sediment transport (Delft3D)
-                    </span>
-                 <div class="service-docs">
-    <div class="service-docs-title">Supporting Evidence</div>
-    <div class="service-doc-list">
+        <p>
+            Numerical modelling and engineering analysis of river systems,
+            flood-prone areas, and coastal zones using
+            <b>HEC-HMS, HEC-RAS, and Delft3D</b> to support planning,
+            design, and decision-making.
+        </p>
 
-        <a href="docs/flood-modelling-report.pdf"
-           target="_blank"
-           class="service-doc">
-            📄 Flood Modelling Report (PDF)
-        </a>
+        <!-- Demo videos -->
+        <span class="video-btn" onclick="openModal('2Fhz4im2f2U')">
+            ▶ Flood control spillway (HEC-HMS)
+        </span>
+        <span class="video-btn" onclick="openModal('-8_tMpZPsm8')">
+            ▶ River flood simulation (HEC-RAS)
+        </span>
+        <span class="video-btn" onclick="openModal('uCQcSUKc7Zk')">
+            ▶ Coastal sediment transport (Delft3D)
+        </span>
 
-        <a href="docs/hec-ras-simulation-output.zip"
-           class="service-doc">
-            🗂️ HEC-RAS Simulation Files
-        </a>
+        <!-- Supporting Evidence -->
+        <div class="service-docs">
+            <div class="service-docs-title">Supporting Evidence</div>
+            <div class="service-doc-list">
+                <a href="docs/flood-modelling-report.pdf"
+                   target="_blank"
+                   class="service-doc">
+                    📄 Flood Modelling Report (PDF)
+                </a>
 
-        <a href="https://doi.org/10.5614/jts.2022.29.3.3"
-           target="_blank"
-           class="service-doc">
-            📘 Journal Publication (DOI)
-        </a>
+                <a href="docs/hec-ras-simulation-output.zip"
+                   class="service-doc">
+                    🗂️ HEC-RAS Simulation Files
+                </a>
+
+                <a href="https://doi.org/10.5614/jts.2022.29.3.3"
+                   target="_blank"
+                   class="service-doc">
+                    📘 Journal Publication (DOI)
+                </a>
+            </div>
+        </div>
+
+        <!-- Project Information -->
+        <div class="service-project">
+            <div class="service-project-title">Project Information</div>
+
+            <div class="project-meta">
+                <div><span>Project Name</span></div>
+                <div>River Flood Hazard Assessment – Central Java</div>
+
+                <div><span>Category</span></div>
+                <div>Hydrology · Hydraulic · Hydrodynamic</div>
+
+                <div><span>Description</span></div>
+                <div>
+                    Rainfall–runoff and river hydraulic simulations to evaluate flood
+                    extent, water level rise, and overflow risk under multiple design
+                    flood scenarios.
+                </div>
+
+                <div><span>Client</span></div>
+                <div>Government Agency / Academic Research Project</div>
+
+                <div><span>Main Software Used</span></div>
+                <div>HEC-HMS · HEC-RAS · Delft3D · QGIS</div>
+
+                <div><span>Status</span></div>
+                <div>Completed (2024)</div>
+            </div>
+        </div>
 
     </div>
 </div>
@@ -906,6 +1009,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
