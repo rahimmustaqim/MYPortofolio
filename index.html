@@ -665,6 +665,77 @@ nav a:hover::after {
     background: #e9f1ec;
     transform: translateY(-2px);
 }
+ /* ===== Digital Products ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+    margin-top: 24px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow:
+        0 10px 26px rgba(0,0,0,0.12),
+        0 3px 8px rgba(0,0,0,0.06);
+    border-top: 5px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card h4 {
+    margin-top: 0;
+    color: var(--accent-dark);
+    font-size: 18px;
+}
+
+.product-card p {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.product-features {
+    padding-left: 18px;
+    font-size: 14px;
+    color: #374151;
+    margin: 14px 0;
+}
+
+.product-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin: 14px 0;
+}
+
+.product-price span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.buy-btn {
+    margin-top: auto;
+}
+
+.buy-btn a {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.buy-btn a:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
 </style>
 </head>
 
@@ -688,7 +759,8 @@ nav a:hover::after {
             <nav class="main-nav">
      
              <a href="#academic">Profile</a>   
-             <a href="#services">Services</a>
+             <a href="#services">Consulting Services Portfolio</a>
+             <a href="#products">Digital Products</a>
              <a href="#contact">Hire Me</a>
                 
              
@@ -1023,6 +1095,100 @@ nav a:hover::after {
 </div>
     
 </section>
+<section id="products" class="container" style="margin-top:48px;margin-bottom:64px">
+    <div class="card">
+        <h2 style="margin-top:0;color:var(--accent-dark)">
+            Digital Products
+        </h2>
+
+        <p style="color:var(--muted)">
+            Ready-to-use engineering resources developed from real projects and academic research.
+            Instant access after confirmation.
+        </p>
+
+        <div class="products-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <h4>HEC-RAS Flood Modelling Starter Pack</h4>
+
+                <p>
+                    A complete starter bundle for river flood analysis using HEC-RAS,
+                    suitable for engineers, consultants, and graduate students.
+                </p>
+
+                <ul class="product-features">
+                    <li>HEC-RAS project files (1D & 2D)</li>
+                    <li>Step-by-step modelling guideline (PDF)</li>
+                    <li>Sample rainfall & boundary datasets</li>
+                </ul>
+
+                <div class="product-price">
+                    USD 49 <span>(one-time purchase)</span>
+                </div>
+
+                <div class="buy-btn">
+                    <a href="mailto:rahimmustaqim@email.com?subject=Purchase%20HEC-RAS%20Starter%20Pack">
+                        Buy / Request Access
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <h4>Delft3D Coastal & Sediment Modelling Templates</h4>
+
+                <p>
+                    Professional Delft3D-FM model templates for coastal hydrodynamics
+                    and sediment transport analysis.
+                </p>
+
+                <ul class="product-features">
+                    <li>Pre-configured Delft3D-FM model</li>
+                    <li>Boundary & forcing setup examples</li>
+                    <li>Best-practice modelling notes</li>
+                </ul>
+
+                <div class="product-price">
+                    USD 79 <span>(commercial use allowed)</span>
+                </div>
+
+                <div class="buy-btn">
+                    <a href="mailto:rahimmustaqim@email.com?subject=Purchase%20Delft3D%20Template">
+                        Buy / Request Access
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <h4>Academic Modelling Training (Recorded)</h4>
+
+                <p>
+                    Recorded professional training sessions on hydrology and hydraulic modelling,
+                    delivered to industry and academic partners.
+                </p>
+
+                <ul class="product-features">
+                    <li>HD recorded training videos</li>
+                    <li>Training materials & exercises</li>
+                    <li>Certificate of participation</li>
+                </ul>
+
+                <div class="product-price">
+                    USD 99 <span>(lifetime access)</span>
+                </div>
+
+                <div class="buy-btn">
+                    <a href="#contact">
+                        Request Enrollment
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <section id="contact" class="container" style="margin-top:48px;margin-bottom:64px">
     <div class="card">
@@ -1192,6 +1358,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
