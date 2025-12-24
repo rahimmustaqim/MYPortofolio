@@ -472,6 +472,15 @@ nav a:hover::after {
     align-items: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+/* ===== Service layout: image on top ===== */
+.service-item.image-top {
+    grid-template-columns: 1fr;
+}
+
+.service-item.image-top .service-img {
+    height: 260px;
+    margin-bottom: 18px;
+}
 
 /* Hover UX motion */
 .service-item:hover {
@@ -869,7 +878,7 @@ nav a:hover::after {
         <div class="services-vertical">
 
           <!-- Service 1 -->
-<div class="service-item card">
+<div class="service-item card image-top">
     <img src="pakil.png"
          alt="Hydrology, Hydraulic, Hydrodynamic, and Sediment Modelling for Pakil Pumped Storage Power Plant - Laguna de Bay - Philippine "
          class="service-img">
@@ -945,7 +954,7 @@ nav a:hover::after {
     </div>
 </div>
           <!-- Service 2 -->
-<div class="service-item card">
+<div class="service-item card image-top">
     <img src="jmb.jpg"
          alt="Hydrology and Hydraulic Modelling"
          class="service-img">
@@ -1023,7 +1032,7 @@ nav a:hover::after {
 </div>
          
    <!-- Service 3 -->
-<div class="service-item card">
+<div class="service-item card image-top">
     <img src="jmb131.jpg"
          alt="Hydrology and Hydraulic Modelling"
          class="service-img">
@@ -1093,7 +1102,7 @@ nav a:hover::after {
     </div>
 </div>
    <!-- Service 4 -->
-<div class="service-item card">
+<div class="service-item card image-top">
     <img src="saumy.png"
          alt="Training Support"
          class="service-img">
@@ -1164,7 +1173,7 @@ nav a:hover::after {
     </div>
 </div>
      <!-- Service 5 -->
-<div class="service-item card">
+<div class="service-item card image-top">
     <img src="jasatirta.jpg"
          alt="Training Support"
          class="service-img">
@@ -1495,6 +1504,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
