@@ -1,0 +1,10 @@
+{
+  "hecras": {
+    "name": "HEC-RAS Flood Modelling Starter Pack",
+    "price": 49000
+  },
+  "delft3d": {
+    "name": "Delft3D Coastal & Sediment Modelling Templates",
+    "price": 79000
+  }
+}
