@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<form id="checkout-form">
+    <input name="name" required placeholder="Full Name"><br><br>
+    <input name="email" type="email" required placeholder="Email"><br><br>
+    <input name="institution" placeholder="Institution"><br><br>
+
+    <input type="hidden" name="product" id="product">
+
+    <button type="submit">Pay Now</button>
+</form>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("product").value = params.get("product");
+</script>
+
+</body>
+</html>
