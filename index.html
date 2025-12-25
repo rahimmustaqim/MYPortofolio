@@ -19,7 +19,7 @@ body {
     font-family: Arial, sans-serif;
     color: #1f2937;
     line-height: 1.6;
-    background-color: #f1f3f5; /* light grey */
+    background-color: #e6efe9; /*  Nagoya-style soft green */
 }
 }
 
@@ -222,6 +222,8 @@ body {
 }
 section {
     scroll-margin-top: 80px;
+     padding-top: 12px; /* subtle breathing space */
+
 }
 
 h1 {
@@ -304,12 +306,12 @@ h4 {
         color: var(--accent-dark);
     }
 
-    footer {
-        margin-top: 60px;
-        padding: 24px;
-        background: #e9f1ec;
-        text-align: center;
-    }
+   footer {
+    margin-top: 60px;
+    padding: 28px;
+    background: #dfece5; /* darker soft green */
+    text-align: center;
+}
        /* ===== Video popup modal ===== */
 .video-btn {
     margin-top: 12px;
@@ -744,6 +746,16 @@ nav a:hover::after {
 .buy-btn a:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
+}
+    body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,0.35), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.25), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
 }
 </style>
 </head>
@@ -1505,6 +1517,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
