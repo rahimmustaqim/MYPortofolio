@@ -1,203 +1,130 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Profile | Rahim Mustaqim</title>
-
-<style>
-/* ===== KEEP YOUR ORIGINAL THEME (UNCHANGED) ===== */
-:root {
-    --accent: #006633;
-    --accent-dark: #004d26;
-    --muted: #5f7f6b;
-    --background: #f3f6f4;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #1f2937;
-    line-height: 1.6;
-    background-color: #e6efe9;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow:
-        0 8px 24px rgba(0,0,0,0.12),
-        0 2px 6px rgba(0,0,0,0.06);
-}
-
-/* ===== HEADER (SAME AS OTHERS) ===== */
-.main-header {
-    background-color: #e6efe9;
-    padding: 22px 24px;
-    display: flex;
-    justify-content: center;
-}
-
-.header-inner {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    max-width: 1100px;
-    width: 100%;
-}
-
-.photo-box {
-    width: 160px;
-    height: 160px;
-}
-
-.profile-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.header-text {
-    flex: 1;
-}
-
-.site-title {
-    font-size: 34px;
-    font-weight: 800;
-}
-
-.author-name {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.author-field {
-    font-size: 16px;
-    color: #333;
-}
-
-.main-nav {
-    margin-top: 16px;
-    display: flex;
-    gap: 20px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #000;
-}
-
-.hire-btn {
-    background: var(--accent);
-    color: #fff !important;
-    padding: 8px 18px;
-    border-radius: 10px;
-    font-weight: 700;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    margin-top: 60px;
-    padding: 28px;
-    background: #dfece5;
-    text-align: center;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Profile | Rahim Mustaqim</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header class="main-header">
-<div class="header-inner">
+    <div class="header-inner">
 
-    <div class="photo-box">
-        <img src="rahim.jpg.jpeg" class="profile-img" alt="Rahim Mustaqim">
-    </div>
-
-    <div class="header-text">
-        <div class="site-title">Rahim Mustaqim, MSc (Eng.)</div>
-        <div class="author-name">Hydraulic & Coastal Engineering Consultant</div>
-        <div class="author-field">
-            Numerical modelling · Hydrology · Coastal & River Engineering
+        <div class="photo-box">
+            <img src="rahim.jpg.jpeg" alt="Rahim Mustaqim" class="profile-img">
         </div>
 
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="profile.html">Profile</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="products.html">Digital Products</a>
-            <a href="contact.html" class="hire-btn">Hire Me</a>
-        </nav>
-    </div>
+        <div class="header-text">
+            <div class="site-title">Rahim Mustaqim, MSc (Eng.)</div>
+            <div class="author-name">Hydraulic & Coastal Engineering Consultant</div>
+            <div class="author-field">
+                Numerical modelling · Hydrology · Coastal & River Engineering
+            </div>
 
-</div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="profile.html" class="active">Profile</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="products.html">Digital Products</a>
+                <a href="contact.html" class="hire-btn">Hire Me</a>
+            </nav>
+        </div>
+
+    </div>
 </header>
 
-<!-- ===== PROFILE CONTENT ===== -->
 <main class="container" style="margin-top:48px;margin-bottom:64px">
 
-<div class="card">
-<h2 style="margin-top:0;color:var(--accent-dark)">Professional Profile</h2>
+    <div class="card">
 
-<p style="color:var(--muted)">
-I am a hydraulic and coastal engineering consultant with a strong academic
-background and practical experience in numerical modelling of water-related
-systems. My work focuses on flood analysis, rainfall–runoff processes,
-river hydraulics, and coastal hydrodynamics using research-based approaches
-and engineering judgement.
-</p>
+        <div class="profile-section">
 
-<hr>
+            <h3>Professional Profile</h3>
 
-<h3 style="color:var(--accent-dark)">Academic Background</h3>
-<ul style="color:var(--muted);line-height:1.7">
-<li><b>Doctor of Engineering (Dr. Eng.)</b> – Civil Engineering, Nagoya University, Japan (ongoing)</li>
-<li><b>MSc (Eng.)</b> – Water Resources Engineering & Management, ITB, Indonesia (2023)</li>
-<li><b>BSc (Eng.)</b> – Water Resources Engineering & Management, ITB, Indonesia (2021)</li>
-</ul>
+            <p class="profile-text">
+              Hydraulic and coastal engineering consultant with a strong academic background and experience in numerical modelling of water-related systems. Expertise includes flood risk assessment, rainfall–runoff modelling, river hydraulics, and coastal hydrodynamics. Experienced in applying research-based methods and sound engineering judgement to support analysis and design in water resources and coastal engineering projects.
+            </p>
 
-<hr>
+            <hr class="profile-divider">
 
-<h3 style="color:var(--accent-dark)">Publications</h3>
-<p style="font-size:14px;color:var(--muted)">
-Mustaqim, R., et al. (2022).  
-Hydrodynamics Analysis in Bedono Beach, Central Java.  
-<i>Jurnal Teknik Sipil ITB, Vol. 29 No. 3</i><br>
-DOI:
-<a href="https://doi.org/10.5614/jts.2022.29.3.3" target="_blank">
-10.5614/jts.2022.29.3.3
-</a>
-</p>
+            <h3>Academic Background</h3>
 
-<hr>
+            <ul class="academic-list">
+                <li>
+                    <b>Doctor of Engineering (Dr. Eng.)</b> – Civil Engineering,
+                    Nagoya University, Japan (D1)
+                </li>
+                <li>
+                    <b>MSc (Eng.)</b> – Water Resources Engineering & Management,
+                    Bandung Institute of Technology, Indonesia (2023)
+                </li>
+                <li>
+                    <b>BSc (Eng.)</b> – Water Resources Engineering & Management,
+                    Bandung Institute of Technology, Indonesia (2021)
+                </li>
+            </ul>
 
-<h3 style="color:var(--accent-dark)">Academic Evidence</h3>
-<ul style="font-size:14px">
-<li><a href="Nagoya.pdf" target="_blank">Certificate of Admission – Nagoya University</a></li>
-<li><a href="Ijasah.png" target="_blank">MSc Degree Certificate</a></li>
-<li><a href="Ijasahb.png" target="_blank">BSc Degree Certificate</a></li>
-<li><a href="fastest.pdf" target="_blank">Academic Award 1</a></li>
-<li><a href="highest.pdf" target="_blank">Academic Award 2</a></li>
-</ul>
+            <hr class="profile-divider">
 
-</div>
+            <h3>Academic Qualification Evidence</h3>
+
+            <div class="evidence-grid">
+                <a href="Nagoya.pdf" target="_blank" class="evidence-item">
+                    🎓 (名古屋大学) Certificate of Admission – Dr (Eng.)
+                </a>
+
+                <a href="Ijasah.png" target="_blank" class="evidence-item">
+                    🎓 Certificate of Degree Completion – MSc (Eng.)
+                </a>
+
+                <a href="Ijasahb.png" target="_blank" class="evidence-item">
+                    🎓 Certificate of Degree Completion – BSc (Eng.)
+                </a>
+
+                <a href="fastest.pdf" target="_blank" class="evidence-item">
+                    📘 Academic Awards 1
+                </a>
+
+                <a href="highest.pdf" target="_blank" class="evidence-item">
+                    📘 Academic Awards 2
+                </a>
+
+                <a href="https://digilib.itb.ac.id/gdl/view/69909"
+                   target="_blank"
+                   class="evidence-item">
+                    🔗 Thesis Repository (ITB)
+                </a>
+            </div>
+
+            <hr class="profile-divider">
+
+            <h3>Publication</h3>
+
+            <p class="publication-text">
+                Mustaqim, R., Widyaningtias., Bumi, I.S., Suryadi, Y.,
+                Nugroho, E.O., Kardhana, H., Adityawan, M.N. (2022):
+                <i>Hydrodynamics Analysis in Bedono Beach Demak Regency,
+                Central Java Indonesia: Open Resource Processing for Modeling</i>.
+                <br>
+                <b>Jurnal Teknik Sipil ITB</b>, Vol. 29 No. 3.
+                DOI:
+                <a href="https://doi.org/10.5614/jts.2022.29.3.3" target="_blank">
+                    10.5614/jts.2022.29.3.3
+                </a>
+            </p>
+
+        </div>
+
+    </div>
 
 </main>
 
 <footer>
-© <span id="year"></span> Rahim Mustaqim<br>
-<span style="font-size:13px;color:var(--muted)">
-Hydraulic · Coastal · Water Resources Engineering
-</span>
+    © <span id="year"></span> Rahim Mustaqim<br>
+    <span style="font-size:13px;color:var(--muted)">
+        Hydraulic · Coastal · Water Resources Engineering
+    </span>
 </footer>
 
 <script>
