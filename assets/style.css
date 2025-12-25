@@ -736,3 +736,78 @@ nav a:hover::after {
     pointer-events: none;
     z-index: -1;
 }
+/* ===== Academic Profile Styling ===== */
+
+.profile-section {
+    margin-top: 40px;
+}
+
+.profile-section h3 {
+    font-size: 20px;
+    color: var(--accent-dark);
+    margin-bottom: 14px;
+}
+
+.profile-divider {
+    border: none;
+    border-top: 1px dashed #d1d5db;
+    margin: 26px 0;
+}
+
+/* Academic list */
+.academic-list {
+    padding-left: 18px;
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.academic-list li {
+    margin-bottom: 8px;
+}
+
+/* Evidence pills */
+.evidence-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.evidence-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    background: #f3f6f4;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.evidence-item:hover {
+    background: #e9f1ec;
+    transform: translateY(-2px);
+}
+
+/* Publication */
+.publication-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.publication-text a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publication-text a:hover {
+    text-decoration: underline;
+}
+
