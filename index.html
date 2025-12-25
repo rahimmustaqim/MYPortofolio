@@ -24,17 +24,12 @@ body {
 
 /* ===== Main Header ===== */
 .main-header {
-    background: #ffffff;
+    background-color: #e6efe9; /* SAME as body */
     padding: 22px 24px;
     display: flex;
     justify-content: center;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    border-bottom: 1px solid #e5e7eb;
-}
+    position: relative;
+    border-bottom: none;
 
 /* Inner container: side-by-side layout */
 .header-inner {
@@ -388,15 +383,7 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
-/* ===== Sticky Header Shrink Effect ===== */
-.main-header {
-    transition: padding 0.3s ease, box-shadow 0.3s ease;
-}
 
-.main-header.scrolled {
-    padding: 12px 24px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-}
        .main-nav a.active {
     color: var(--accent);
 }
@@ -1440,16 +1427,7 @@ function closeModal(e) {
 }
 </script>
 <script>
-/* ===== Header shrink on scroll ===== */
-const header = document.querySelector('.main-header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
 
 /* ===== Active navigation highlight ===== */
 const sections = document.querySelectorAll("section[id]");
@@ -1476,6 +1454,7 @@ window.addEventListener("scroll", () => {
 
 </body>
 </html>
+
 
 
 
