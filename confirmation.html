@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment Confirmation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6efe9;
+}
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+h2 {
+    margin-top: 0;
+    color: #004d26;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+button {
+    background: #006633;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+button:hover {
+    background: #004d26;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h2>Payment Confirmation</h2>
+
+<form action="https://formspree.io/f/mykgebza" method="POST">
+
+<input type="hidden" name="_subject" value="Payment Confirmation – HEC-HMS Training">
+
+<input name="name" required placeholder="Full Name">
+<input type="email" name="_replyto" required placeholder="Email Address">
+<input name="payment_method" placeholder="Payment Method (Bank / E-wallet)">
+<input name="transaction_date" placeholder="Transfer Date">
+<input name="amount" placeholder="Amount Paid">
+
+<textarea name="message" rows="4"
+placeholder="Additional notes (optional)"></textarea>
+
+<button type="submit">Submit Confirmation</button>
+
+</form>
+
+</div>
+</div>
+
+</body>
+</html>
