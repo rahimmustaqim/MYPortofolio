@@ -480,13 +480,13 @@ nav a:hover::after {
         0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* Service image */
+/* ===== Software Logo Style ===== */
 .service-img {
-    width: 100%;
+    width: 160px;
     height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    object-fit: contain;   /* IMPORTANT for logos */
+    background: #ffffff;
+    padding: 18px;
 }
 
 /* Service content */
@@ -792,73 +792,74 @@ nav a:hover::after {
 <div class="services-vertical">
 
     <!-- ===== HEC-HMS ===== -->
-    <div class="service-item image-top card">
-        <a href="contact.html?project=HEC-HMS%20Flood%20Modelling"
-           target="_blank"
-           style="text-decoration:none;color:inherit">
+   <div class="service-item card">
+    <a href="contact.html?project=HEC-HMS%20Flood%20Modelling"
+       target="_blank"
+       style="text-decoration:none;color:inherit;display:contents;">
 
-            <img src="hec-hms.jpeg"
-                 alt="HEC-HMS Flood Modelling"
-                 class="service-img">
+        <img src="hec-hms.jpeg"
+             alt="HEC-HMS Flood Modelling"
+             class="service-img">
 
-            <div class="service-content">
-                <h4>HEC-HMS Hydrological Modelling</h4>
-                <p>
-                    Rainfall–runoff analysis, watershed delineation, design flood
-                    estimation, and hydrograph simulation using HEC-HMS.
-                    Suitable for flood studies, dam safety, drainage planning,
-                    and academic research.
-                </p>
-            </div>
+        <div class="service-content">
+            <h4>HEC-HMS Hydrological Modelling</h4>
+            <p>
+                Rainfall–runoff analysis, watershed delineation, design flood
+                estimation, and hydrograph simulation using HEC-HMS.
+                Suitable for flood studies, dam safety, drainage planning,
+                and academic research.
+            </p>
+        </div>
 
-        </a>
-    </div>
+    </a>
+</div>
+
 
     <!-- ===== HEC-RAS ===== -->
-    <div class="service-item image-top card">
-        <a href="contact.html?project=HEC-RAS%20Hydraulic%20Modelling"
-           target="_blank"
-           style="text-decoration:none;color:inherit">
+ <div class="service-item card">
+    <a href="contact.html?project=HEC-RAS%20Hydraulic%20Modelling"
+       target="_blank"
+       style="text-decoration:none;color:inherit;display:contents;">
 
-            <img src="hec-ras.jpg"
-                 alt="HEC-RAS Hydraulic Modelling"
-                 class="service-img">
+        <img src="hec-ras.jpg"
+             alt="HEC-RAS Hydraulic Modelling"
+             class="service-img">
 
-            <div class="service-content">
-                <h4>HEC-RAS Hydraulic & Floodplain Analysis</h4>
-                <p>
-                    1D/2D river hydraulics, flood inundation mapping,
-                    channel capacity assessment, and mitigation studies
-                    using HEC-RAS for engineering and regulatory purposes.
-                </p>
-            </div>
+        <div class="service-content">
+            <h4>HEC-RAS Hydraulic & Floodplain Analysis</h4>
+            <p>
+                1D/2D river hydraulics, flood inundation mapping,
+                channel capacity assessment, and mitigation studies
+                using HEC-RAS for engineering and regulatory purposes.
+            </p>
+        </div>
 
-        </a>
-    </div>
+    </a>
+</div>
+
 
     <!-- ===== Delft3D ===== -->
-    <div class="service-item image-top card">
-        <a href="contact.html?project=Delft3D%20Coastal%20Modelling"
-           target="_blank"
-           style="text-decoration:none;color:inherit">
+<div class="service-item card">
+    <a href="contact.html?project=Delft3D%20Coastal%20Modelling"
+       target="_blank"
+       style="text-decoration:none;color:inherit;display:contents;">
 
-            <img src="delft3d.png"
-                 alt="Delft3D Coastal Modelling"
-                 class="service-img">
+        <img src="delft3d.png"
+             alt="Delft3D Coastal Modelling"
+             class="service-img">
 
-            <div class="service-content">
-                <h4>Delft3D Coastal & Sediment Modelling</h4>
-                <p>
-                    Hydrodynamics, wave–current interaction, sediment transport,
-                    and shoreline response modelling using Delft3D
-                    for coastal engineering and research applications.
-                </p>
-            </div>
+        <div class="service-content">
+            <h4>Delft3D Coastal & Sediment Modelling</h4>
+            <p>
+                Hydrodynamics, wave–current interaction, sediment transport,
+                and shoreline response modelling using Delft3D
+                for coastal engineering and research applications.
+            </p>
+        </div>
 
-        </a>
-    </div>
-
+    </a>
 </div>
+
        
            
             <a class="cta" href="#contact">Get in touch</a>
@@ -1043,6 +1044,7 @@ if (project) {
 </script>
 </body>
 </html>
+
 
 
 
