@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hydraulic & Coastal Modelling Training</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    --accent:#006633;
+    --accent-dark:#004d26;
+    --bg:#f3f6f4;
+}
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:#222;
+}
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+h1,h2,h3{text-align:center;}
+.subtitle{
+    text-align:center;
+    max-width:900px;
+    margin:10px auto 30px;
+    color:#555;
+}
+.badge{
+    background:#c0392b;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:.85rem;
+}
+.toggle{
+    text-align:center;
+    margin:30px 0;
+}
+.toggle button{
+    padding:10px 18px;
+    margin:0 6px;
+    border-radius:20px;
+    border:1px solid var(--accent);
+    background:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+.toggle button.active{
+    background:var(--accent);
+    color:#fff;
+}
+.tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+.tabs button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#ddd;
+    cursor:pointer;
+}
+.tabs button.active{
+    background:var(--accent);
+    color:#fff;
+}
+.section{display:none;}
+.section.active{display:block;}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+.card{
+    background:#fff;
+    border-radius:14px;
+    padding:26px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+.price{
+    font-size:1.3rem;
+    font-weight:bold;
+    color:var(--accent);
+    margin-bottom:10px;
+}
+.card ul{padding-left:18px;}
+.card li{margin-bottom:8px;}
+.actions{
+    text-align:center;
+    margin-top:50px;
+}
+.actions button{
+    padding:14px 30px;
+    border-radius:30px;
+    border:none;
+    font-weight:bold;
+    background:var(--accent);
+    color:#fff;
+    cursor:pointer;
+    margin:6px;
+}
+.actions button:hover{
+    background:var(--accent-dark);
+}
+footer{
+    text-align:center;
+    font-size:.85rem;
+    color:#777;
+    margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Hydraulic & Coastal Modelling Training</h1>
+<p class="subtitle">
+Professional training for <b>HEC-HMS, HEC-RAS, and Delft3D</b><br>
+Engineering-oriented • Project-based • Consultant-level
+<br><br>
+<span class="badge">Available for Indonesia Only (Currently)</span>
+</p>
+
+<!-- Currency -->
+<div class="toggle">
+    <button class="active" onclick="setCurrency('USD')">USD</button>
+    <button onclick="setCurrency('IDR')">IDR</button>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+    <button class="active" onclick="openTab('individual')">Individual Training</button>
+    <button onclick="openTab('corporate')">Corporate Training</button>
+</div>
+
+<!-- ================= INDIVIDUAL ================= -->
+<div id="individual" class="section active">
+
+<h2>Individual Training</h2>
+
+<div class="grid">
+    <div class="card">
+        <h3>HEC-HMS</h3>
+        <div class="price" data-usd="450"></div>
+        <ul>
+            <li>Rainfall–runoff modelling</li>
+            <li>Design storm & calibration</li>
+            <li>Hands-on workflow</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>HEC-RAS</h3>
+        <div class="price" data-usd="550"></div>
+        <ul>
+            <li>1D & unsteady flow</li>
+            <li>Floodplain analysis</li>
+            <li>Engineering interpretation</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Delft3D</h3>
+        <div class="price" data-usd="1000"></div>
+        <ul>
+            <li>Hydrodynamic & waves</li>
+            <li>Nearshore processes</li>
+            <li>Research-grade workflow</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<!-- ================= CORPORATE ================= -->
+<div id="corporate" class="section">
+
+<h2>Corporate / Institutional Training</h2>
+
+<div class="grid">
+    <div class="card">
+        <h3>HEC-HMS</h3>
+        <div class="price" data-usd="4000"></div>
+        <ul>
+            <li>3 days • ≤20 participants</li>
+            <li>Design flood & calibration</li>
+            <li>Institutional case study</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>HEC-RAS</h3>
+        <div class="price" data-usd="6500"></div>
+        <ul>
+            <li>4 days • 1D & 2D</li>
+            <li>Flood mapping</li>
+            <li>Decision-support outputs</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Delft3D</h3>
+        <div class="price" data-usd="15000"></div>
+        <ul>
+            <li>5–7 days intensive</li>
+            <li>Sediment & morphology</li>
+            <li>Project-based mentoring</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<!-- ACTIONS -->
+<div class="actions">
+    <button onclick="generateEmail()">Request Official Proposal</button>
+    <button onclick="window.print()">Download Proposal (PDF)</button>
+</div>
+
+<footer>
+Base currency: USD • Estimated conversion: 1 USD ≈ IDR 15,000<br>
+Training delivered in Indonesian / bilingual format
+</footer>
+
+</div>
+
+<script>
+let currency='USD';
+const rate=15000;
+
+function setCurrency(cur){
+    currency=cur;
+    document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+    updatePrices();
+}
+
+function updatePrices(){
+    document.querySelectorAll('.price').forEach(p=>{
+        const usd=p.dataset.usd;
+        p.innerHTML = currency==='USD'
+            ? 'USD '+usd
+            : 'IDR '+(usd*rate).toLocaleString();
+    });
+}
+updatePrices();
+
+function openTab(id){
+    document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function generateEmail(){
+    const subject="Request for Corporate Modelling Training Proposal";
+    const body=`Dear Sir/Madam,
+
+We are interested in the Corporate Training program for:
+HEC-HMS / HEC-RAS / Delft3D.
+
+Please provide us with the official proposal, scope, and schedule.
+
+Institution:
+Contact Person:
+Expected Participants:
+Preferred Training Period:
+
+Best regards,
+`;
+    window.location.href =
+        "mailto:?subject="+encodeURIComponent(subject)+
+        "&body="+encodeURIComponent(body);
+}
+</script>
+
+</body>
+</html>
