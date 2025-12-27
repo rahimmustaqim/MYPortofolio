@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HEC-RAS Hydraulic & Flood Modelling</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f5;
+    margin: 0;
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    max-width: 820px;
+    margin: 0 auto 30px;
+}
+
+/* Currency Toggle */
+.currency-toggle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.currency-toggle button {
+    padding: 10px 18px;
+    margin: 0 6px;
+    border-radius: 20px;
+    border: 1px solid #006633;
+    background: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.currency-toggle button.active {
+    background: #006633;
+    color: #ffffff;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+}
+
+.pricing-card h3 {
+    margin-top: 0;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #006633;
+    margin-bottom: 18px;
+}
+
+.pricing-card ul {
+    padding-left: 18px;
+}
+
+.pricing-card li {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    border: 2px solid #006633;
+}
+
+.note {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+}
+
+.cta {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.cta a {
+    display: inline-block;
+    background: #006633;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    background: #004d26;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>HEC-RAS Hydraulic & Flood Modelling</h1>
+<p class="subtitle">
+Professional river hydraulic and floodplain modelling using HEC-RAS,
+including water surface profiles, flood extent mapping, and engineering analysis.
+</p>
+
+<!-- Currency Toggle -->
+<div class="currency-toggle">
+    <button class="active" onclick="setCurrency('USD')">USD</button>
+    <button onclick="setCurrency('EUR')">EUR</button>
+    <button onclick="setCurrency('IDR')">IDR</button>
+</div>
+
+<!-- Pricing -->
+<div class="pricing-grid">
+
+<div class="pricing-card">
+    <h3>Basic (1D)</h3>
+    <div class="price" data-usd-min="1200" data-usd-max="1800"></div>
+    <ul>
+        <li>1D river hydraulic model</li>
+        <li>Steady flow simulation</li>
+        <li>Water surface profile</li>
+        <li>Channel capacity check</li>
+        <li>Technical summary</li>
+    </ul>
+</div>
+
+<div class="pricing-card highlight">
+    <h3>Standard (1D + Flood Mapping)</h3>
+    <div class="price" data-usd-min="1800" data-usd-max="3000"></div>
+    <ul>
+        <li>1D unsteady flow simulation</li>
+        <li>Multiple return periods</li>
+        <li>Flood extent mapping</li>
+        <li>Basic GIS integration</li>
+        <li>Engineering-grade report</li>
+    </ul>
+</div>
+
+<div class="pricing-card">
+    <h3>Advanced (2D Flood)</h3>
+    <div class="price" data-usd-min="3000" data-usd-max="5000"></div>
+    <ul>
+        <li>2D floodplain modelling</li>
+        <li>Urban / complex flow conditions</li>
+        <li>Multiple scenarios</li>
+        <li>Velocity & depth maps</li>
+        <li>Detailed interpretation</li>
+    </ul>
+</div>
+
+<div class="pricing-card">
+    <h3>Comprehensive / Infrastructure</h3>
+    <div class="price" data-usd-min="5000" data-usd-max="8000"></div>
+    <ul>
+        <li>Large river systems</li>
+        <li>Bridge / structure interaction</li>
+        <li>Design optimization scenarios</li>
+        <li>Full documentation</li>
+        <li>Integration with HEC-HMS</li>
+    </ul>
+</div>
+
+</div>
+
+<p class="note">
+Base pricing in USD. Currency conversions are indicative only.<br>
+Approx. 1 USD ≈ 0.92 EUR | 1 USD ≈ IDR 15,000
+</p>
+
+<div class="cta">
+    <a href="contact.html">Request a Quotation</a>
+</div>
+
+</div>
+
+<script>
+const rates = {
+    USD: 1,
+    EUR: 0.92,
+    IDR: 15000
+};
+
+function formatCurrency(value, currency) {
+    if (currency === 'IDR') {
+        return 'IDR ' + (value / 1000000).toFixed(1) + ' M';
+    }
+    return currency + ' ' + value.toLocaleString();
+}
+
+function setCurrency(currency) {
+    document.querySelectorAll('.currency-toggle button')
+        .forEach(btn => btn.classList.remove('active'));
+
+    event.target.classList.add('active');
+
+    document.querySelectorAll('.price').forEach(el => {
+        const minUSD = el.dataset.usdMin;
+        const maxUSD = el.dataset.usdMax;
+
+        const min = Math.round(minUSD * rates[currency]);
+        const max = Math.round(maxUSD * rates[currency]);
+
+        el.innerHTML =
+            formatCurrency(min, currency) +
+            ' – ' +
+            formatCurrency(max, currency);
+    });
+}
+
+// Default load
+setCurrency('USD');
+</script>
+
+</body>
+</html>
