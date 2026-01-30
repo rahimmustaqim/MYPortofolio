@@ -4,45 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PORTOFOLIO</title>
-
-  <!-- Link to the new colorful stylesheet -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-<header class="main-header">
-    <div class="header-inner">
-
-        <div class="photo-box">
-            <img src="rahim.jpg.jpeg" alt="Rahim Mustaqim" class="profile-img">
-        </div>
-
-        <div class="header-text">
-            <div class="site-title">Rahim Mustaqim, MSc (Eng.)</div>
-            <div class="author-name">Hydraulic & Coastal Engineering</div>
-            <div class="author-field">
-               Specialising in numerical modelling and water-related engineering problems
-            </div>
-
-            <nav class="main-nav" aria-label="Primary navigation">
-                <a href="index.html">Home</a>
-                <a href="profile.html">Profile</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="products.html">Articles & Digital Products</a>
-                <a href="contact.html" class="hire-btn">Hire Me</a>
-            </nav>
-        </div>
-
+<header class="site-header" role="banner" aria-label="Main header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a class="brand" href="index.html" aria-label="Homepage">
+        <img class="brand-photo" src="rahim.jpg.jpeg" alt="Profile photo — Rahim Mustaqim" width="120" height="120" />
+      </a>
     </div>
-    <!-- decorative colorful blobs -->
-    <div class="decor-blobs" aria-hidden="true">
-      <span class="blob b1"></span>
-      <span class="blob b2"></span>
-      <span class="blob b3"></span>
+
+    <div class="header-center">
+      <h1 class="site-title">Rahim Mustaqim, MSc (Eng.)</h1>
+      <p class="site-subtitle">Hydraulic &amp; Coastal Engineering — numerical modelling &amp; water systems</p>
+      <nav class="primary-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="products.html">Articles &amp; Products</a></li>
+        </ul>
+      </nav>
     </div>
+
+    <div class="header-right">
+      <a class="cta-hire" href="contact.html" role="button">Hire me</a>
+    </div>
+  </div>
 </header>
-
 
 <section class="hero">
     <div class="container">
@@ -61,105 +53,39 @@
 
                 <!-- ===== HEC-HMS ===== -->
                <div class="service-item card">
-                <a href="hec-hms-services.html"
-                   target="_blank"
-                   style="text-decoration:none;color:inherit;display:contents;">
-
-                    <img src="hec-hms.jpeg"
-                         alt="HEC-HMS Flood Modelling"
-                         class="service-img logo">
-
+                    <img src="hec-hms.jpeg" alt="HEC-HMS Flood Modelling" class="service-img logo" loading="lazy">
                     <div class="service-content">
                         <h4>HEC-HMS Hydrological Modelling</h4>
-                        <p>
-                            Rainfall–runoff analysis, watershed delineation, design flood
-                            estimation, and hydrograph simulation using HEC-HMS.
-                            Suitable for flood studies, dam safety, drainage planning,
-                            and academic research.
-                        </p>
-                        <div class="service-meta-row">
-                          <a class="service-doc" href="pakil.pdf" target="_blank" rel="noopener">📄 Report</a>
-                          <button class="video-btn" onclick="openModal('UTPwySG7-8g')">▶ Watch demo</button>
-                        </div>
+                        <a class="btn-price" href="product-hechms.html#pricing">Get price</a>
                     </div>
-
-                </a>
                </div>
 
-
                 <!-- ===== HEC-RAS ===== -->
-             <div class="service-item card">
-                <a href="hec-ras-services.html"
-                   target="_blank"
-                   style="text-decoration:none;color:inherit;display:contents;">
-
-                    <img src="hec-ras.jpg"
-                         alt="HEC-RAS Hydraulic Modelling"
-                         class="service-img logo">
-
+               <div class="service-item card">
+                    <img src="hec-ras.jpg" alt="HEC-RAS Hydraulic Modelling" class="service-img logo" loading="lazy">
                     <div class="service-content">
-                        <h4>HEC-RAS Hydraulic & Floodplain Analysis</h4>
-                        <p>
-                            1D/2D river hydraulics, flood inundation mapping,
-                            channel capacity assessment, and mitigation studies
-                            using HEC-RAS for engineering and regulatory purposes.
-                        </p>
-                        <div class="service-meta-row">
-                          <a class="service-doc" href="jmb.pdf" target="_blank" rel="noopener">📄 Summary</a>
-                          <button class="video-btn" onclick="openModal('rFTdmlR0mfY')">▶ Demo</button>
-                        </div>
+                        <h4>HEC-RAS River &amp; Flood Modelling</h4>
+                        <a class="btn-price" href="product-hechms.html#pricing">Get price</a>
                     </div>
-
-                </a>
-            </div>
-
+               </div>
 
                 <!-- ===== Delft3D ===== -->
-            <div class="service-item card">
-                <a href="delft3d-services.html"
-                   target="_blank"
-                   style="text-decoration:none;color:inherit;display:contents;">
-
-                    <img src="delft3d.png"
-                         alt="Delft3D Coastal Modelling"
-                         class="service-img logo">
-
+               <div class="service-item card">
+                    <img src="delft3d.png" alt="Delft3D Coastal Modelling" class="service-img logo" loading="lazy">
                     <div class="service-content">
-                        <h4>Delft3D Coastal & Sediment Modelling</h4>
-                        <p>
-                            Hydrodynamics, wave–current interaction, sediment transport,
-                            and shoreline response modelling using Delft3D
-                            for coastal engineering and research applications.
-                        </p>
-                        <div class="service-meta-row">
-                          <a class="service-doc" href="jasatirta.pdf" target="_blank" rel="noopener">📄 Report</a>
-                        </div>
+                        <h4>Delft3D Coastal &amp; Estuary Modelling</h4>
+                        <a class="btn-price" href="product-hechms.html#pricing">Get price</a>
                     </div>
+               </div>
 
-                </a>
-            </div>
-
-            <div class="service-item card">
-                <a href="academic-services.html"
-                   target="_blank"
-                   style="text-decoration:none;color:inherit;display:contents;">
-
-                    <img src="training.png"
-                         alt="Training & Modelling"
-                         class="service-img logo">
-
+               <!-- ===== Academic training ===== -->
+               <div class="service-item card">
+                    <img src="training.png" alt="Training & Modelling" class="service-img logo" loading="lazy">
                     <div class="service-content">
-                        <h4>Academic / Research Support & Modelling Training</h4>
-                        <p>
-                           Professional support and training in hydrological and hydraulic modelling using HEC-HMS, HEC-RAS, and Delft3D, including flood analysis, water assessment, and applied engineering studies for academic and technical applications.
-                        </p>
-                        <div class="service-meta-row">
-                          <a class="service-doc" href="pakil.zip" rel="noopener">🗂️ Simulation files</a>
-                        </div>
+                        <h4>Academic / Research Training</h4>
+                        <a class="btn-price" href="contact.html">Get price</a>
                     </div>
-
-                </a>
-            </div>
+               </div>
 
             </div> <!-- end services-vertical -->
 
