@@ -5,124 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PORTOFOLIO</title>
 
-  <!-- Improved, modernized stylesheet — keeps your image & link references unchanged -->
-  <style>
-    :root{
-      --accent:#006633;
-      --accent-dark:#004d26;
-      --muted:#5f7f6b;
-      --bg:#e6efe9;
-      --card:#ffffff;
-      --radius:12px;
-      --shadow-sm:0 6px 18px rgba(2,6,23,0.06);
-      --shadow-md:0 12px 32px rgba(2,6,23,0.09);
-      --focus:0 0 0 4px rgba(0,102,51,0.12);
-      --container:1100px;
-      --gap:20px;
-      --transition:220ms ease;
-    }
-
-    /* Global */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";color:#1f2937;background:var(--bg);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    .container{max-width:var(--container);margin:0 auto;padding:20px}
-
-    /* Header */
-    .main-header{padding:18px 0;background:transparent}
-    .header-inner{display:flex;gap:20px;align-items:center;max-width:var(--container);margin:0 auto;padding:0 20px}
-    .photo-box{flex:0 0 140px;display:flex;align-items:center;justify-content:center}
-    .profile-img{width:128px;height:128px;border-radius:12px;object-fit:cover;box-shadow:var(--shadow-sm)}
-    .header-text{flex:1;min-width:0}
-    .site-title{font-size:1.6rem;font-weight:800;color:#000;margin:0}
-    .author-name{margin-top:6px;font-size:1.05rem;font-weight:700;color:#000}
-    .author-field{margin-top:6px;color:var(--muted);line-height:1.4}
-
-    /* Nav */
-    .main-nav{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
-    .main-nav a{font-weight:600;font-size:0.95rem;padding:8px 10px;border-radius:8px;text-decoration:none;color:#000;transition:all var(--transition)}
-    .main-nav a:hover{background:rgba(0,0,0,0.04)}
-    .main-nav a.active{color:var(--accent);background:rgba(0,102,51,0.06)}
-    .hire-btn{background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center}
-    .hire-btn:hover{background:var(--accent-dark);transform:translateY(-2px);transition:transform var(--transition),background var(--transition)}
-
-    /* Hero */
-    .hero{background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:40px;border-radius:14px;margin-bottom:20px}
-    .card{background:rgba(255,255,255,0.95);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm)}
-    .profile-divider{border:none;border-top:1px dashed rgba(0,0,0,0.06);margin:18px 0}
-
-    .hero h1{font-size:1.5rem;color:#fff;margin:0;line-height:1.15}
-    .hero p{color:rgba(255,255,255,0.95);margin-top:12px}
-
-    /* CTA */
-    .cta{display:inline-block;margin-top:12px;background:#fff;color:var(--accent);padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none}
-    .cta:hover{transform:translateY(-3px);transition:transform var(--transition)}
-
-    /* Services list */
-    .services-vertical{display:flex;flex-direction:column;gap:22px;margin-top:16px}
-    .service-item{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:center;border-radius:12px;padding:0;overflow:hidden;background:var(--card);box-shadow:var(--shadow-sm);transition:transform var(--transition),box-shadow var(--transition)}
-    .service-item.card{padding:0}
-    .service-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
-    .service-item.image-top{grid-template-columns:1fr}
-    .service-img{width:100%;height:160px;object-fit:cover;border-radius:0;display:block}
-    /* software-logo variant uses contain */
-    .service-img.logo {object-fit:contain;background:#fff;padding:18px;height:160px}
-
-    .service-content{padding:18px;display:flex;flex-direction:column;gap:8px}
-    .service-content h4{margin:0;color:var(--accent-dark);font-size:1.05rem}
-    .service-content p{margin:0;color:var(--muted);line-height:1.6;font-size:0.95rem}
-
-    /* Documents & project info */
-    .service-docs{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,0.06)}
-    .service-doc{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:#f3f6f4;border:1px solid rgba(0,0,0,0.04);text-decoration:none;color:#1f2937}
-    .service-project{margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.06)}
-    .project-meta{display:grid;grid-template-columns:160px 1fr;gap:6px 12px;font-size:0.95rem;color:var(--muted)}
-    .project-meta span{font-weight:600;color:var(--muted)}
-
-    /* Video button */
-    .video-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
-    .video-btn:hover{background:var(--accent-dark)}
-
-    /* Contact form */
-    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-    .contact-form input,.contact-form textarea{padding:10px 12px;border-radius:8px;border:1px solid #d1d5db;font-family:inherit}
-
-    /* Footer */
-    footer{margin-top:40px;padding:22px;background:#dfece5;text-align:center;color:var(--muted)}
-
-    /* Modal */
-    .modal{display:none;position:fixed;inset:0;background:rgba(1,1,1,0.6);align-items:center;justify-content:center;z-index:2000;padding:16px}
-    .modal[aria-hidden="false"]{display:flex}
-    .modal-content{background:#fff;border-radius:12px;padding:14px;max-width:920px;width:100%;position:relative}
-    .modal-content iframe{width:100%;height:520px;border-radius:8px;border:0}
-    .close-modal{position:absolute;right:12px;top:8px;background:transparent;border:0;font-size:20px;cursor:pointer;color:#333}
-
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .kicker{color:var(--accent-dark);font-weight:800;font-size:0.95rem}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .header-inner{padding:0 16px;gap:14px}
-      .photo-box{flex:0 0 110px}
-      .profile-img{width:96px;height:96px}
-      .site-title{font-size:1.25rem}
-      .service-item{grid-template-columns:1fr;align-items:stretch}
-      .service-img{height:200px}
-      .project-meta{grid-template-columns:1fr}
-      .main-nav{display:flex;flex-wrap:wrap;gap:10px}
-    }
-    @media (max-width:640px){
-      .container{padding:12px}
-      .hero{padding:22px}
-      .modal-content iframe{height:320px}
-      .main-nav a{padding:8px}
-    }
-
-    /* Focus styles for accessibility */
-    :focus{outline:none}
-    :focus-visible{outline:var(--focus);outline-offset:4px;border-radius:8px}
-  </style>
+  <!-- Link to the new colorful stylesheet -->
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -151,19 +35,23 @@
         </div>
 
     </div>
+    <!-- decorative colorful blobs -->
+    <div class="decor-blobs" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+    </div>
 </header>
 
 
 <section class="hero">
     <div class="container">
-        <div class="card">
+        <div class="card hero-card">
             <h1>Delivering Engineering Solutions for Complex Water Systems on Land and Along the Coast</h1>
 
-            <p style="color:var(--muted);font-size:14px;margin-top:12px">
-              ✔ Clear communication &nbsp;•&nbsp; Research-based approach &nbsp;•&nbsp; Practical engineering judgement
-            </p>
+            <p class="kicker">✔ Clear communication  •  Research-based approach  •  Practical engineering judgement</p>
 
-            <p style="margin-top:10px;color:var(--muted);line-height:1.6">
+            <p class="lead">
                 I provide engineering consulting services to analyse and solve complex water-related challenges. My work covers river basins, flood-prone areas, and coastal zones with a strong focus on numerical modelling, data-driven analysis, and practical engineering solutions.
             </p>
 
@@ -179,7 +67,7 @@
 
                     <img src="hec-hms.jpeg"
                          alt="HEC-HMS Flood Modelling"
-                         class="service-img">
+                         class="service-img logo">
 
                     <div class="service-content">
                         <h4>HEC-HMS Hydrological Modelling</h4>
@@ -189,10 +77,14 @@
                             Suitable for flood studies, dam safety, drainage planning,
                             and academic research.
                         </p>
+                        <div class="service-meta-row">
+                          <a class="service-doc" href="pakil.pdf" target="_blank" rel="noopener">📄 Report</a>
+                          <button class="video-btn" onclick="openModal('UTPwySG7-8g')">▶ Watch demo</button>
+                        </div>
                     </div>
 
                 </a>
-            </div>
+               </div>
 
 
                 <!-- ===== HEC-RAS ===== -->
@@ -203,7 +95,7 @@
 
                     <img src="hec-ras.jpg"
                          alt="HEC-RAS Hydraulic Modelling"
-                         class="service-img">
+                         class="service-img logo">
 
                     <div class="service-content">
                         <h4>HEC-RAS Hydraulic & Floodplain Analysis</h4>
@@ -212,6 +104,10 @@
                             channel capacity assessment, and mitigation studies
                             using HEC-RAS for engineering and regulatory purposes.
                         </p>
+                        <div class="service-meta-row">
+                          <a class="service-doc" href="jmb.pdf" target="_blank" rel="noopener">📄 Summary</a>
+                          <button class="video-btn" onclick="openModal('rFTdmlR0mfY')">▶ Demo</button>
+                        </div>
                     </div>
 
                 </a>
@@ -226,7 +122,7 @@
 
                     <img src="delft3d.png"
                          alt="Delft3D Coastal Modelling"
-                         class="service-img">
+                         class="service-img logo">
 
                     <div class="service-content">
                         <h4>Delft3D Coastal & Sediment Modelling</h4>
@@ -235,6 +131,9 @@
                             and shoreline response modelling using Delft3D
                             for coastal engineering and research applications.
                         </p>
+                        <div class="service-meta-row">
+                          <a class="service-doc" href="jasatirta.pdf" target="_blank" rel="noopener">📄 Report</a>
+                        </div>
                     </div>
 
                 </a>
@@ -246,14 +145,17 @@
                    style="text-decoration:none;color:inherit;display:contents;">
 
                     <img src="training.png"
-                         alt="Delft3D Coastal Modelling"
-                         class="service-img">
+                         alt="Training & Modelling"
+                         class="service-img logo">
 
                     <div class="service-content">
-                        <h4>Academic/Research Support & Modelling Trainning</h4>
+                        <h4>Academic / Research Support & Modelling Training</h4>
                         <p>
                            Professional support and training in hydrological and hydraulic modelling using HEC-HMS, HEC-RAS, and Delft3D, including flood analysis, water assessment, and applied engineering studies for academic and technical applications.
                         </p>
+                        <div class="service-meta-row">
+                          <a class="service-doc" href="pakil.zip" rel="noopener">🗂️ Simulation files</a>
+                        </div>
                     </div>
 
                 </a>
@@ -261,7 +163,9 @@
 
             </div> <!-- end services-vertical -->
 
-            <a class="cta" href="contact.html">Get in touch</a>
+            <div style="margin-top:18px">
+              <a class="cta" href="contact.html">Get in touch</a>
+            </div>
         </div>
      </div>
 </section>
@@ -273,11 +177,11 @@
     </div>
 </footer>
 
-<!-- Video modal (keeps your markup & ids) -->
+<!-- Video modal (keeps your existing openModal/closeModal API) -->
 <div id="videoModal" class="modal" aria-hidden="true">
   <div class="modal-content" role="dialog" aria-label="Video player">
     <button class="close-modal" aria-label="Close video">✕</button>
-    <div id="videoInner" style="min-height:240px"></div>
+    <div id="videoInner"></div>
   </div>
 </div>
 
@@ -285,94 +189,43 @@
 /* Footer year */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Improved modal: lazy-load iframe, close on ESC & backdrop click,
-   preserves your openModal(videoId) API used elsewhere */
+/* Modal: lazy-load iframe, close on ESC & backdrop click */
 (function(){
   const modal = document.getElementById('videoModal');
   const inner = document.getElementById('videoInner');
 
-  // Expose function with same name so existing calls still work
   window.openModal = function(videoId){
     if(!videoId) return;
-    // build iframe lazily
     const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=1');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-    iframe.setAttribute('allowfullscreen', '');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=1';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+    iframe.allowFullscreen = true;
     iframe.style.width = '100%';
     iframe.style.height = '480px';
     iframe.style.border = '0';
     inner.innerHTML = '';
     inner.appendChild(iframe);
-    modal.setAttribute('aria-hidden', 'false');
-    // trap focus on close button for small accessibility improvement
-    const btn = modal.querySelector('.close-modal');
-    btn.focus();
+    modal.setAttribute('aria-hidden','false');
   };
 
   function closeModal(){
     inner.innerHTML = '';
-    modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('aria-hidden','true');
   }
 
-  // close on click outside content
   modal.addEventListener('click', function(e){
     if(e.target === modal) closeModal();
   });
 
-  // close buttons
   document.addEventListener('click', function(e){
-    if(e.target && e.target.classList && e.target.classList.contains('close-modal')){
-      closeModal();
-    }
+    if(e.target && e.target.classList && e.target.classList.contains('close-modal')) closeModal();
   });
 
-  // ESC to close
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeModal();
   });
 
-  // expose closeModal for compatibility
-  window.closeModal = function(e){ closeModal(); };
-})();
-
-/* Active nav highlight (works if you add ids to sections).
-   Kept but made resilient to missing ids. */
-(function(){
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".main-nav a");
-  if(!sections.length) return;
-
-  function onScroll(){
-    let current = "";
-    sections.forEach(section => {
-      const top = section.getBoundingClientRect().top + window.scrollY - 120;
-      if(window.scrollY >= top) current = section.id;
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href') || '';
-      if(href.startsWith('#') && href.slice(1) === current) link.classList.add('active');
-    });
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-})();
-
-/* URL param helper kept as-is (no changes to behavior) */
-(function(){
-  const urlParams = new URLSearchParams(window.location.search);
-  const project = urlParams.get("project");
-  if (project) {
-      const select = document.querySelector('select[name="Project Type"]');
-      if (select) {
-          for (let option of select.options) {
-              if (option.text.includes(project.split(" ")[0])) {
-                  option.selected = true;
-              }
-          }
-      }
-  }
+  window.closeModal = function(){ closeModal(); };
 })();
 </script>
 </body>
