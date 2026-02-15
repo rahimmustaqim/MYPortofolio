@@ -122,10 +122,6 @@ body {
         font-size: 13px;
     }
 
-    .author-field {
-        display: none;
-    }
-
     .main-nav {
         gap: 16px;
         margin-top: 8px;
@@ -162,7 +158,29 @@ body {
     letter-spacing: 0;
     color: #6b7280;
     line-height: 1.4;
-    display: none; /* Hide on desktop for cleaner look */
+    /* Visually hidden but accessible to screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@media (max-width: 800px) {
+    .author-field {
+        /* Show on mobile - reset the visually-hidden styles */
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 2px 0 0 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
 }
 
 /* Navigation links */
@@ -796,6 +814,26 @@ nav a:hover::after {
 
 .profile-section {
     margin-top: 0;
+}
+
+/* Hero section on profile page */
+.hero-heading {
+    margin-top: 0;
+    color: var(--accent-dark);
+}
+
+.key-points {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.services-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin-bottom: 28px;
 }
 
 .profile-section h3 {
