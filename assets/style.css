@@ -335,10 +335,6 @@ h1 {
     letter-spacing: -0.6px;
     color: #111827;
     margin-top: 0;
-    background: linear-gradient(135deg, #111827, var(--accent-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 h2 {
@@ -693,11 +689,10 @@ nav a:hover::after {
     border-radius: 16px 16px 0 0;
     box-shadow: none;
     transition: var(--transition);
-    filter: brightness(0.95);
 }
 
 .service-item:hover .service-img {
-    filter: brightness(1) contrast(1.05);
+    filter: contrast(1.05);
     transform: scale(1.02);
 }
 
@@ -913,8 +908,6 @@ nav a:hover::after {
     border-radius: 20px;
     padding: 26px;
     box-shadow: var(--shadow-lg);
-    border-top: 5px solid transparent;
-    border-image: linear-gradient(90deg, var(--accent), var(--accent-light)) 1;
     display: flex;
     flex-direction: column;
     transition: var(--transition);
@@ -925,7 +918,7 @@ nav a:hover::after {
 .product-card::before {
     content: '';
     position: absolute;
-    top: -2px;
+    top: 0;
     left: 0;
     right: 0;
     height: 5px;
@@ -1019,7 +1012,14 @@ nav a:hover::after {
         radial-gradient(circle at 50% 80%, rgba(0, 136, 68, 0.06), transparent 45%);
     pointer-events: none;
     z-index: -1;
-    animation: float 20s ease-in-out infinite;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: no-preference) {
+    body::before {
+        animation: float 20s ease-in-out infinite;
+        will-change: transform;
+    }
 }
 
 @keyframes float {
