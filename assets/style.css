@@ -33,7 +33,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 16px 32px;
+    padding: 24px 32px;
     display: flex;
     justify-content: center;
     position: sticky;
@@ -86,10 +86,18 @@ body {
 /* Text block */
 .header-text {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     text-align: left;
     flex: 1;
+    gap: 32px;
+}
+
+/* Header title container */
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* Desktop nav links align with text */
@@ -124,6 +132,12 @@ body {
     .header-text {
         flex: 1;
         min-width: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-title-group {
+        width: 100%;
     }
 
     .site-title {
