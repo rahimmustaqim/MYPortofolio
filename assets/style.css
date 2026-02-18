@@ -33,7 +33,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 24px 32px;
+    padding: 16px 32px;
     display: flex;
     justify-content: center;
     position: sticky;
