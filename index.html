@@ -110,6 +110,56 @@
             flex-wrap: wrap;
         }
 
+        .collaboration-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .collaboration-logos {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .logo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,102,170,0.25);
+        }
+
+        .logo-item img {
+            width: 100%;
+            max-width: 150px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .logo-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #4b5563;
+            text-align: center;
+            line-height: 1.4;
+        }
+
         .highlight-item {
             text-align: center;
         }
@@ -166,6 +216,20 @@
             .landing-highlights {
                 gap: 30px;
             }
+
+            .collaboration-logos {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .logo-item {
+                padding: 15px;
+            }
+
+            .logo-item img {
+                max-width: 120px;
+                height: 60px;
+            }
         }
     </style>
 </head>
@@ -187,16 +251,26 @@
 
             <div class="landing-highlights">
                 <div class="highlight-item">
-                    <div class="highlight-icon">🎓</div>
-                    <div class="highlight-text">PhD Candidate<br>Nagoya University</div>
+                    <div class="collaboration-title">Collaboration Experience</div>
                 </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">💼</div>
-                    <div class="highlight-text">Professional<br>Consultant</div>
+            </div>
+
+            <div class="collaboration-logos">
+                <div class="logo-item">
+                    <img src="hdec-logo.svg" alt="HDEC Engineering">
+                    <div class="logo-text">HDEC Engineering</div>
                 </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">📊</div>
-                    <div class="highlight-text">Research &<br>Engineering</div>
+                <div class="logo-item">
+                    <img src="jasatirta.jpg" alt="Perum Jasa Tirta II">
+                    <div class="logo-text">Perum Jasa Tirta II</div>
+                </div>
+                <div class="logo-item">
+                    <img src="saumy.png" alt="PT Saumy Gemilang Indonesia">
+                    <div class="logo-text">PT Saumy Gemilang Indonesia</div>
+                </div>
+                <div class="logo-item">
+                    <img src="tectona-logo.svg" alt="PT Tectona Mitra Utama">
+                    <div class="logo-text">PT Tectona Mitra Utama</div>
                 </div>
             </div>
         </div>
