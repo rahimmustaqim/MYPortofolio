@@ -39,14 +39,15 @@
             Contact & Collaboration
         </h2>
 
-        <p style="color:var(--muted)">
+        <p class="contact-intro">
             Please provide a brief overview of your project or research needs.
             I typically respond within 24 hours on working days.
         </p>
 
         <form id="contactForm"
               action="https://formspree.io/f/mykgebza"
-              method="POST">
+              method="POST"
+              class="contact-form">
 
             <!-- Subject -->
             <input type="hidden" name="_subject"
@@ -64,56 +65,53 @@ Rahim Mustaqim
 Hydraulic & Coastal Engineering Consultant">
 
             <!-- Name -->
-            <div style="margin-bottom:16px">
-                <label><b>Your Name</b></label>
+            <label>
+                <b>Your Name</b>
                 <input type="text"
                        name="Name"
                        required
-                       placeholder="e.g. John Smith"
-                       style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
-            </div>
+                       placeholder="e.g. John Smith">
+            </label>
 
             <!-- Email -->
-            <div style="margin-bottom:16px">
-                <label><b>Email Address</b></label>
+            <label>
+                <b>Email Address</b>
                 <input type="email"
                        name="_replyto"
                        required
-                       placeholder="e.g. john@company.com"
-                       style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
-            </div>
+                       placeholder="e.g. john@company.com">
+            </label>
 
             <!-- Project Type -->
-            <div style="margin-bottom:16px">
-                <label><b>Project Type</b></label>
-                <select name="Project Type"
-                        style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db">
+            <label class="contact-form-full-width">
+                <b>Project Type</b>
+                <select name="Project Type">
                     <option>Flood & Hydraulic Modelling (HEC-RAS)</option>
                     <option>Hydrology & Rainfall-Runoff (HEC-HMS)</option>
                     <option>Coastal & Sediment Modelling (Delft3D)</option>
                     <option>Academic / Research Support</option>
                     <option>Other</option>
                 </select>
-            </div>
+            </label>
 
             <!-- Message -->
-            <div style="margin-bottom:20px">
-                <label><b>Project Description</b></label>
+            <label class="contact-form-full-width">
+                <b>Project Description</b>
                 <textarea name="Message"
-                          rows="5"
+                          rows="6"
                           required
-                          placeholder="Briefly describe your objectives, location, and expected outputs"
-                          style="width:100%;padding:12px;border-radius:8px;border:1px solid #d1d5db"></textarea>
-            </div>
+                          placeholder="Briefly describe your objectives, location, and expected outputs"></textarea>
+            </label>
 
             <!-- Submit -->
-            <button type="submit"
-                    style="background:var(--accent);color:white;
-                           padding:14px 22px;border:none;border-radius:10px;
-                           font-size:16px;font-weight:700;cursor:pointer">
-                Send Project Inquiry
-            </button>
+            <div class="contact-submit">
+                <button type="submit" class="cta">
+                    Send Project Inquiry
+                </button>
+            </div>
 
             <!-- GDPR note -->
-            <p style="font-size:12.5px;color:#6b7280;margin-top:10px">
-                By submitting this form, you agree that
+            <p class="contact-gdpr">
+                By submitting this form, you agree that your information will be used to contact you regarding your inquiry.
+            </p>
+        </form>
