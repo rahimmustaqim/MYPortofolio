@@ -564,6 +564,13 @@ nav a:hover::after {
     width: 100%;
 }
 /* ===== Contact Form Styling ===== */
+.contact-intro {
+    color: #4b5563;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
 .contact-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -577,6 +584,10 @@ nav a:hover::after {
     font-size: 15px;
     font-weight: 600;
     color: #1f2937;
+}
+
+.contact-form-full-width {
+    grid-column: span 2;
 }
 
 .contact-form input,
@@ -593,7 +604,6 @@ nav a:hover::after {
 }
 
 .contact-form textarea {
-    grid-column: span 2;
     resize: vertical;
     min-height: 140px;
 }
