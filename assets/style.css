@@ -580,7 +580,8 @@ nav a:hover::after {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
     margin-top: 8px;
     padding: 16px 18px;
     font-size: 15px;
@@ -598,7 +599,8 @@ nav a:hover::after {
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 4px rgba(0,102,170,0.1);
@@ -609,6 +611,19 @@ nav a:hover::after {
 .contact-submit {
     grid-column: span 2;
     margin-top: 10px;
+}
+
+.contact-submit .cta {
+    width: auto;
+    margin-top: 0;
+}
+
+.contact-gdpr {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 10px;
+    grid-column: span 2;
+    line-height: 1.6;
 }
 
 /* Mobile optimization */
@@ -837,7 +852,7 @@ nav a:hover::after {
 
 .project-meta span {
     color: var(--muted);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 @media (max-width: 700px) {
